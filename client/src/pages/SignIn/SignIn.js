@@ -43,12 +43,12 @@ class SignIn extends Component {
               </div>
               <div className="row">
                 <div className="input-field col s12">
-                  <a href="index.html" className="btn waves-effect waves-light pink accent-2 col s12">Login</a>
+                  <a href="/" className="btn waves-effect waves-light pink accent-2 col s12">Login</a>
                 </div>
               </div>
               <div className="row">
                 <div className="input-field col s6 m6 l6">
-                  <p className="margin medium-small"><a href="page-register.html">Register Now!</a></p>
+                  <p className="margin medium-small"><a href="/register">Register Now!</a></p>
                 </div>
                 <div className="input-field col s6 m6 l6">
                   <p className="margin right-align medium-small"><a href="page-forgot-password.html">Forgot password ?</a></p>
@@ -66,7 +66,7 @@ export default SignIn;
 
 
 
-
 // $(document).ready(function () {
-//   $('select').formSelect();
+//   $('select').material_select();
 // });
+
