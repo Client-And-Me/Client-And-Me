@@ -4,6 +4,7 @@
   "private": true,
   "dependencies": {
     "babel": "^6.23.0",
+    "materialize-css": "^1.0.0",
     "react": "^16.5.1",
     "react-dom": "^16.5.1",
     "react-materialize": "^2.4.5",

@@ -1,9 +1,10 @@
 import React, { Component } from "react";
-import { Input } from 'react-materialize'
 import "./SignIn.css";
 
-class SignIn extends Component {
 
+
+
+class SignIn extends Component {
 
   ///login logic here
 
@@ -22,23 +23,33 @@ class SignIn extends Component {
               </div>
               <div className="row margin">
                 <div className="input-field col s12">
+                  <select>
+                    <option value="" disabled selected>Choose Client Or Provider</option>
+                    <option value="client">Client</option>
+                    <option value="provider">Provider</option>
+                  </select>
+                </div>
+              </div>
+              <div className="row margin">
+                <div className="input-field col s12">
                   <i className="material-icons prefix pt-5">person_outline</i>
                   <input id="username" type="text" />
-                  <label for="username" className="center-align">Username</label>
+                  <label htmlFor="username" className="center-align">Username</label>
                 </div>
               </div>
               <div className="row margin">
                 <div className="input-field col s12">
                   <i className="material-icons prefix pt-5">lock_outline</i>
                   <input id="password" type="password" />
-                  <label for="password">Password</label>
+                  <label htmlFor="password">Password</label>
                 </div>
               </div>
               <div className="row">
-                <div className="col s12 m12 l12 ml-2 mt-3">
-                  <input type="checkbox" id="remember-me" />
-                  <label for="remember-me">Remember me</label>
-                  <Input name='group1' type='checkbox' value='red' label='test' />
+                <div className="row margin col s12">
+                  <label>
+                    <input type="checkbox" />
+                    <span>Remember Me</span>
+                  </label>
                 </div>
               </div>
               <div className="row">
