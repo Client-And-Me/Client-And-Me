@@ -6,6 +6,7 @@ import Nav from "./components/Nav";
 import Footer from "./components/Footer";
 import SignIn from "./pages/SignIn";
 import SignUp from "./pages/SignUp";
+import ProviderHome from "./pages/ProviderHome";
 
 const App = () => (
   <Router>
@@ -16,6 +17,7 @@ const App = () => (
         <Route exact path="/SignIn" component={SignIn} />
         <Route exact path="/register" component={SignUp} />
         <Route exact path="/client" component={Client} />
+        <Route exact path="/providerhome" component={ProviderHome} />
       </Switch>
       <Footer />
     </div>

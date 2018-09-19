@@ -5,6 +5,8 @@
   "dependencies": {
     "babel": "^6.23.0",
     "materialize-css": "^1.0.0",
+    "fullcalendar": "^3.9.0",
+    "prop-types": "^15.6.2",
     "react": "^16.5.1",
     "react-dom": "^16.5.1",
     "react-materialize": "^2.4.5",
