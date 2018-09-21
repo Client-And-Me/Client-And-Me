@@ -15,18 +15,17 @@ class Client extends Component {
         <Row>
           <Col size="md-4">
             <ProfilePhoto />
-          </Col>
-          <Col size="md-4">
             <Title>My Appointments</Title>
             <Title>My People</Title>
           </Col>
         </Row>
         <Row>
             <Col size="md-4">
-                <ProfileText />
+                <ProfileText>This is information that the client adds about themself</ProfileText>
             </Col>
             <Col size="md-4">
                 <Collapsible />
+
             </Col>
         </Row>
       </Container>
