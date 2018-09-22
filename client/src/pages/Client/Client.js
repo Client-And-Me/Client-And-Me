@@ -1,5 +1,6 @@
 import React, { Component } from "react";
-import { Col, Row, Container } from "../../components/Grid";
+import { Section, Div, Card, Row, Col } from 'react-materialize';
+// import { Col, Row, Container } from "../../components/Grid";
 import ProfilePhoto from "../../components/ProfilePhoto";
 import ProfileText from "../../components/ProfileText";
 import Title from "../../components/Title";
@@ -11,24 +12,24 @@ class Client extends Component {
 
     render() {
         return (
-            <Container fluid>
+        <Div>
         <Row>
-          <Col size="md-4">
-            <ProfilePhoto />
+          <Col s={4}>
+          <Card className='small'></Card>;
             <Title>My Appointments</Title>
             <Title>My People</Title>
           </Col>
         </Row>
         <Row>
-            <Col size="md-4">
+            <Col s={4}>
                 <ProfileText>This is information that the client adds about themself</ProfileText>
             </Col>
-            <Col size="md-4">
+            <Col s={4}>
                 <Collapsible />
 
             </Col>
         </Row>
-      </Container>
+      </Div>
         );
     }
 }
