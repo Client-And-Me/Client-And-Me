@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import Jumbotron from "../../components/Jumbotron";
+// import Jumbotron from "../../components/Jumbotron";
 import Prices from "../../components/Prices";
 import FullCalendar from "../../components/FullCalendar";
 // import { Link } from "react-router-dom";
@@ -14,21 +14,13 @@ class ProviderHome extends Component {
         return (
             <Container fluid>
                 <Row>
-                    <Col size="md-6">
-                        <Jumbotron>
-                            <h1>client&me: simple client management software for independent beauty professionals</h1>
-                        </Jumbotron>
-                    </Col>
-                </Row>
-                <Row>
-                    <Col size="md-4">
+                    <Col size="s12 m3 l3">
                         <Prices />
                     </Col>
-                    <Col size="md-4">
-                        <Prices />
-                    </Col>
-                    <Col size="md-4">
-                        <FullCalendar />
+                    <Col size="s12 m8 l8">
+                        <div class="card-panel">
+                            <FullCalendar />
+                        </div>
                     </Col>
                 </Row>
             </Container>
