@@ -1,37 +1,43 @@
 import React, { Component } from "react";
-import Jumbotron from "../../components/Jumbotron";
-import Prices from "../../components/Prices";
+import $ from 'jquery';
+import ReactDOM from 'react-dom';
+// import 'materialize-css';
+// import 'materialize-css/dist/css/materialize.min.css';
+// import Jumbotron from "../../components/Jumbotron";
+// import Prices from "../../components/Prices";
 // import { Link } from "react-router-dom";
-import { Col, Row, Container } from "../../components/Grid";
+import { Section, Div, Card, Row, Col } from 'react-materialize';
 
 class Home extends Component {
-    state = {
-    };
+  state = {
+  };
 
-    render() {
-        return (
-            <Container fluid>
+  render() {
+    return (
+      <Section>
         <Row>
-          <Col size="md-6">
-            <Jumbotron>
+          <Col m={6} s={12}>
+            <Card className='blue-grey darken-1' textClassName='white-text' title='Card title' actions={[<a href='/'>This is a link</a>]}>
               <h1>client&me: simple client management software for independent beauty professionals</h1>
-            </Jumbotron>
+            </Card>
           </Col>
         </Row>
         <Row>
-          <Col size="md-4">
-            <Prices/>
+          <Col m={6} s={12}>
+            <Card className='blue-grey darken-1' textClassName='white-text' title='Card title' actions={[<a href='/'>This is a link</a>]}>
+              I am a very simple card.
+            </Card>
           </Col>
-          <Col size="md-4">
-            <Prices/>
-          </Col>
-          <Col size="md-4">
-            <Prices/>
+          <Col m={6} s={12}>
+            <Card className='blue-grey darken-1' textClassName='white-text' title='Card title' actions={[<a href='/'>This is a link</a>]}>
+              I am a very simple card.
+            </Card>
           </Col>
         </Row>
-      </Container>
-        );
-    }
-}
+      </Section>
+
+    )
+  }
+};
 
 export default Home;
