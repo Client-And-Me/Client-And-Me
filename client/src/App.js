@@ -5,13 +5,13 @@ import Client from "./pages/Client";
 import SignIn from "./pages/SignIn";
 import SignUp from "./pages/SignUp";
 import ProviderHome from "./pages/ProviderHome";
-import Nav from "./components/Nav";
+import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
 
 const App = () => (
   <Router>
     <div>
-      <Nav />
+      <Navbar />
       <Switch>
         <Route exact path="/" component={Home} />
         <Route exact path="/SignIn" component={SignIn} />
