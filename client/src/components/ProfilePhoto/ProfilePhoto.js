@@ -1,14 +1,9 @@
-import React from "react";
+import React, { Component } from "react";
+import { Section, Div, Card, Row, Col } from 'react-materialize';
 import "./ProfilePhoto.css";
 
-const ProfilePhoto = () => (
-    <div className="col s6 m2">
-        <div className="card">
-            <div className="card-image">
-                <img src="https://via.placeholder.com/200x200" alt="client image"/>
-            </div>
-        </div>
-    </div> 
-);
-
-export default ProfilePhoto;
+export default () => (
+<Card className='small' id="profile-photo"
+  image='https://via.placeholder.com/200x200'>
+</Card>
+)
