@@ -1,26 +1,32 @@
 import React from "react";
-// import "./Prices.css";
-import { Section, Div, Card, Row, Col } from 'react-materialize';
+import "./Prices.css";
+import { Section, Container, Card, Row, Col } from 'react-materialize';
 
 export default () => (
   <Section>
-    <Row>
-      <Col m={6} s={12} offset="m2 l3">
-        <Card className='blue-grey darken-1' textClassName='white-text' title='Card title' actions={[<a href='/'>This is a link</a>]}>
-          <h1>client&me: simple client management software for independent beauty professionals</h1>
+    <Row className='intro'>
+      <Col l={6} m={6} s={12} offset="l3 m3 s0">
+        <Card className='brandColor center' textClassName='white-text'>
+          <h2>client&me</h2>
+          <h3>An affordable solution to keeping you connected with your passion.</h3>
         </Card>
       </Col>
     </Row>
     <Row>
-      <Col m={6} s={12}>
-        <Card className='blue-grey darken-1' textClassName='white-text' title='Card title' actions={[<a href='/'>This is a link</a>]}>
-          I am a very simple card.
-            </Card>
+      <Col l={2} m={2} s={4} offset="l3 m3 s0">
+        <Card className='brandColor center small' textClassName='white-text' title='Notebook' actions={[<a href='/'>Register</a>]}>
+          <h5>A free, simple digital notebook for keeping track of clients & appointments.</h5>
+        </Card>
       </Col>
-      <Col m={6} s={12}>
-        <Card className='blue-grey darken-1' textClassName='white-text' title='Card title' actions={[<a href='/'>This is a link</a>]}>
-          I am a very simple card.
-            </Card>
+      <Col l={2} m={2} s={4} >
+        <Card className='brandColor center small' textClassName='white-text' title='Planner' actions={[<a href='/'>Register</a>]}>
+          <h5>A digital notebook and planner for appointment notes & scheduling.</h5>
+        </Card>
+      </Col>
+      <Col l={2} m={2} s={4}>
+        <Card className='brandColor center small' textClassName='white-text' title='Planner Plus' actions={[<a href='/'>Register</a>]}>
+          <h5>An expansive notebook and planner for appointment notes, scheduling and payment processing.</h5>
+        </Card>
       </Col>
     </Row>
   </Section>
