@@ -3,7 +3,8 @@ import React, { Component } from "react";
 import Prices from "../../components/Prices";
 import FullCalendar from "../../components/FullCalendar";
 // import { Link } from "react-router-dom";
-import { Col, Row, Container } from "../../components/Grid";
+import Modal from "../../components/Modal"
+import { Col, Row, Container } from "react-materialize";
 
 
 class ProviderHome extends Component {
@@ -14,15 +15,16 @@ class ProviderHome extends Component {
         return (
             <Container fluid>
                 <Row>
-                    <Col size="s12 m3 l3">
+                    <Col s={12} m={3} l={3}>
                         <Prices />
                     </Col>
-                    <Col size="s12 m8 l8">
+                    <Col s={12} m={8} l={8}>
                         <div class="card-panel">
                             <FullCalendar />
                         </div>
                     </Col>
                 </Row>
+
             </Container>
         );
     }
