@@ -107,7 +107,7 @@ class Calendar extends React.Component {
                 console.log("Start: " + start + " End: " + end);
                 console.log(jsEvent);
                 console.log(view);
-                this.openModal();
+                // this.openModal();
                 console.log("endClick");
             },
             //dayClick: function (date, allDay, jsEvent, view) {
