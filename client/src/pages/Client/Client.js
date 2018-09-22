@@ -4,7 +4,7 @@ import { Section, Div, Card, Row, Col } from 'react-materialize';
 import ProfilePhoto from "../../components/ProfilePhoto";
 import ProfileText from "../../components/ProfileText";
 import Title from "../../components/Title";
-import Collapsible from "../../components/Collapsible";
+import CollapsibleAccordion from "../../components/CollapsibleAccordion";
 
 class Client extends Component {
     state = {
@@ -12,24 +12,22 @@ class Client extends Component {
 
     render() {
         return (
-        <Div>
+        <Section>
         <Row>
           <Col s={4}>
-          <Card className='small'></Card>;
+          <ProfilePhoto></ProfilePhoto>
+          <ProfileText></ProfileText>
+          </Col>
+          <Col s={4}>
             <Title>My Appointments</Title>
-            <Title>My People</Title>
+            <Title>Where the calendar goes</Title>                
+          </Col>
+          <Col s={4}>
+          <Title>My People</Title>
+          <CollapsibleAccordion></CollapsibleAccordion>  
           </Col>
         </Row>
-        <Row>
-            <Col s={4}>
-                <ProfileText>This is information that the client adds about themself</ProfileText>
-            </Col>
-            <Col s={4}>
-                <Collapsible />
-
-            </Col>
-        </Row>
-      </Div>
+      </Section>
         );
     }
 }
