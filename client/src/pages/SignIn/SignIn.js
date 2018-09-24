@@ -24,7 +24,7 @@ class SignIn extends Component {
               <div className="row margin">
                 <div className="input-field col s12">
                   <select>
-                    <option value="" disabled selected>Choose Client Or Provider</option>
+                    <option value="" disabled selected>Client or Provider</option>
                     <option value="client">Client</option>
                     <option value="provider">Provider</option>
                   </select>

@@ -1,17 +1,15 @@
 import React from "react";
 import "./ProfileText.css";
+import { Section, Div, Card, Row, Col } from 'react-materialize';
 
-const ProfileText = props => (
-  
-    <div className="col s6 m2">
-      <div className="card blue-grey darken-1">
-        <div className="card-content white-text">
-          <span className="card-title">Card Title</span>
-          <p>{props.children}</p>
-        </div>
-      </div>
-    </div>
- 
-);
-
-export default ProfileText;
+export default () => (
+  <Section>
+    <Row>
+      <Col m={12} s={12}>
+        <Card className='blue-grey darken-1' textClassName='white-text' id="profile-text">
+          <p>something the client wants to put in</p>
+        </Card>
+      </Col>
+    </Row>
+  </Section>
+)
