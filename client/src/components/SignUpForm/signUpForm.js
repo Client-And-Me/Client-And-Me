@@ -31,9 +31,12 @@ class SignUpForm extends Component {
             passwordOne,
         } = this.state;
 
-        auth.doCreateUserWithEmailAndPassword(email, passwordOne)
+        auth.createUser(email, passwordOne)
             .then(authUser => {
                 this.setState({ ...INITIAL_STATE });
+
+                // create user in sql
+
             })
             .catch(error => {
                 this.setState(byPropKey('error', error));
@@ -60,44 +63,48 @@ class SignUpForm extends Component {
             username === '';
 
         return (
-            <form onSubmit={this.onSubmit}>
+            <div class="container">
+                <form onSubmit={this.onSubmit}>
 
-                <select>
-                    <option value="" disabled selected>Sign up as Client or Provider</option>
-                    <option value="client">Client</option>
-                    <option value="provider">Provider</option>
-                </select>
 
-                <input
-                    value={username}
-                    onChange={event => this.setState(byPropKey('username', event.target.value))}
-                    type="text"
-                    placeholder="Full Name" />
 
-                <input
-                    value={email}
-                    onChange={event => this.setState(byPropKey('email', event.target.value))}
-                    type="text"
-                    placeholder="Email Address" />
+                    <select>
+                        <option value="" disabled selected>Sign up as Client or Provider</option>
+                        <option value="client">Client</option>
+                        <option value="provider">Provider</option>
+                    </select>
 
-                <input
-                    value={passwordOne}
-                    onChange={event => this.setState(byPropKey('passwordOne', event.target.value))}
-                    type="password"
-                    placeholder="Password" />
+                    <input
+                        value={username}
+                        onChange={event => this.setState(byPropKey('username', event.target.value))}
+                        type="text"
+                        placeholder="Full Name" />
 
-                <input
-                    value={passwordTwo}
-                    onChange={event => this.setState(byPropKey('passwordTwo', event.target.value))}
-                    type="password"
-                    placeholder="Confirm Password" />
+                    <input
+                        value={email}
+                        onChange={event => this.setState(byPropKey('email', event.target.value))}
+                        type="text"
+                        placeholder="Email Address" />
 
-                <button disabled={isInvalid} type="submit">
-                    Sign Up
+                    <input
+                        value={passwordOne}
+                        onChange={event => this.setState(byPropKey('passwordOne', event.target.value))}
+                        type="password"
+                        placeholder="Password" />
+
+                    <input
+                        value={passwordTwo}
+                        onChange={event => this.setState(byPropKey('passwordTwo', event.target.value))}
+                        type="password"
+                        placeholder="Confirm Password" />
+
+                    <button disabled={isInvalid} type="submit">
+                        Sign Up
                 </button>
 
-                {error && <p>{error.message}</p>}
-            </form>
+                    {error && <p>{error.message}</p>}
+                </form>
+            </div >
         );
     }
 }
