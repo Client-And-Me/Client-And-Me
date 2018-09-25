@@ -4,6 +4,8 @@ import "./ProfilePhoto.css";
 
 export default () => (
 <Card className='small' id="profile-photo"
-  image='https://via.placeholder.com/200x200'>
+  image={"./assets/images/female_profile.jpg"}>
 </Card>
-)
+);
+
+
