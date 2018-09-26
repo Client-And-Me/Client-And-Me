@@ -108,7 +108,7 @@ class SignInForm extends Component {
                                     <p className="margin medium-small"><a href="/register">Register Now!</a></p>
                                 </div>
                                 <div className="input-field col s6 m6 l6">
-                                    <p className="margin right-align medium-small"><a href="page-forgot-password.html">Forgot password ?</a></p>
+                                    <p className="margin right-align medium-small"><a href="/password-forget">Forgot password ?</a></p>
                                 </div>
                             </div>
                             {error && <p>{error.message}</p>}
