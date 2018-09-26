@@ -1,6 +1,7 @@
 import React from "react";
 // import "./Navbar.css";
 import { Navbar, NavItem } from "react-materialize";
+import SignOutButton from "../SignOutButton/signOut";
 
 
 export default () => (
