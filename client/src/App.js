@@ -7,6 +7,7 @@ import SignUp from "./pages/SignUp";
 import ProviderHome from "./pages/ProviderHome";
 import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
+import PasswordForget from "./pages/PasswordForget";
 
 const App = () => (
   <Router>
@@ -18,6 +19,7 @@ const App = () => (
         <Route exact path="/register" component={SignUp} />
         <Route exact path="/client" component={Client} />
         <Route exact path="/providerhome" component={ProviderHome} />
+        <Route exact path="/password-forget" component={PasswordForget} />
       </Switch>
       <Footer />
     </div>
