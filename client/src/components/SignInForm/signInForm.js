@@ -100,7 +100,7 @@ class SignInForm extends Component {
                             </div>
                             <div className="row">
                                 <div className="input-field col s12">
-                                    <a href="/" className="btn waves-effect waves-light pink accent-2 col s12" disabled={isInvalid} type="submit">Sign In</a>
+                                    <a href="" className="btn waves-effect waves-light pink accent-2 col s12" disabled={isInvalid} type="submit">Sign In</a>
                                 </div>
                             </div>
                             <div className="row">

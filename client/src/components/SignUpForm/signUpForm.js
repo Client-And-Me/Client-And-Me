@@ -26,7 +26,7 @@ class SignUpForm extends Component {
     onSubmit = (event) => {
 
         const {
-            username,
+            name,
             email,
             passwordOne,
         } = this.state;
@@ -65,9 +65,6 @@ class SignUpForm extends Component {
         return (
             <div class="container">
                 <form onSubmit={this.onSubmit}>
-
-
-
                     <select>
                         <option value="" disabled selected>Sign up as Client or Provider</option>
                         <option value="client">Client</option>
