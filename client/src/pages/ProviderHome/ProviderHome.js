@@ -23,7 +23,7 @@ class ProviderHome extends Component {
                         </Card>
                     </Col>
                     <Col s={12} m={9} l={9}>
-                        <div class="card-panel">
+                        <div className="card-panel">
                             <FullCalendar />
                         </div>
                     </Col>
