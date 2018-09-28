@@ -24,9 +24,9 @@ class ProviderAppointments extends Component {
                         </div>
                     </Col>
                     <Col s={12} m={3} l={3}>
-                        <Card header={<CardTitle reveal image={"./assets/images/female_profile.jpg"} waves='light' />}
-                        title="Appointment Details"
-                        reveal={<p>Here is some more information about this product that is only revealed once clicked on.</p>}>
+                        <Card
+                        title="Appointment Details">
+                        Appointment details for each appointment that is clicked on will appear here.
                         </Card>
                     </Col>
                 </Row>
