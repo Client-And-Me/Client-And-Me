@@ -16,7 +16,7 @@ const byPropKey = (propertyName, value) => () => ({
 
 
 
-class SignUpForm extends Component {
+class RegisterForm extends Component {
     constructor(props) {
         super(props);
 
@@ -107,5 +107,5 @@ class SignUpForm extends Component {
 }
 
 export {
-    SignUpForm
+    RegisterForm
 };

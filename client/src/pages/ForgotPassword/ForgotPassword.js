@@ -1,17 +1,17 @@
 import React, { Component } from "react";
-import { PasswordForgetForm } from "../../components/PasswordForgetForm/passwordForgetForm";
+import { ForgotPasswordForm } from "../../components/ForgotPasswordForm/ForgotPasswordForm";
 import NavbarHome from "../../components/Navbar/NavbarHome";
 
-class PasswordForget extends Component {
+class ForgotPassword extends Component {
 
     render() {
         return (
             <div>
                 <NavbarHome />
-            <PasswordForgetForm />
+            <ForgotPasswordForm />
             </div>
         );
     }
 }
 
-export default PasswordForget;
+export default ForgotPassword;

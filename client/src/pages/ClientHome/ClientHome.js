@@ -8,7 +8,7 @@ import FullCalendar from "../../components/FullCalendar";
 import CollapsibleAccordion from "../../components/CollapsibleAccordion";
 import NavbarClient from "../../components/Navbar/NavbarClient";
 
-class Client extends Component {
+class ClientHome extends Component {
     state = {
     };
 
@@ -43,4 +43,4 @@ class Client extends Component {
     }
 }
 
-export default Client;
+export default ClientHome;

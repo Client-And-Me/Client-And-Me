@@ -5,6 +5,7 @@ import FullCalendar from "../../components/FullCalendar";
 import Modal from "../../components/Modal"
 // import "./ProviderAppointments.css";
 import { CardTitle, Card, Col, Row, Section } from "react-materialize";
+import NavbarProvider from "../../components/Navbar/NavbarProvider";
 
 
 class ProviderAppointments extends Component {
@@ -13,6 +14,8 @@ class ProviderAppointments extends Component {
 
     render() {
         return (
+            <div>
+            <NavbarProvider />
             <Section>
                 <Row>
                     <Col s={12} m={9} l={9}>
@@ -29,6 +32,7 @@ class ProviderAppointments extends Component {
                 </Row>
 
             </Section>
+            </div>
         );
     }
 }

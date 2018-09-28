@@ -9,9 +9,12 @@ export default () => (
         <div class="nav-wrapper navbar">
             <a href="/" class="brand-logo">client&me</a>
             <ul id="nav-mobile" class="right hide-on-large-and-up">
-                <li><a href="/SignIn">Login</a></li>
-                <li><a href="/register">Register</a></li>
+                <li><a href="/provider-home">Dashboard</a></li>
+                <li><a href="/provider-appointments">Appointments</a></li>
+                <li><a href="/provider-clients">Clients</a></li>
+                <li><a href="/">Log Out</a></li>
             </ul>
         </div>
     </nav>
 )
+
