@@ -2,10 +2,11 @@ module.exports = function (sequelize, DataTypes) {
     var Appointment = sequelize.define("appointment", {
         title: DataTypes.STRING,
         allDay: DataTypes.STRING,
-        start: DataTypes.TIMESTAMP,
-        end: DataTypes.TIMESTAMP,
-        url: DataTypes.string,
+        start: DataTypes.DATE,
+        end: DataTypes.DATE,
+        url: DataTypes.STRING,
         color: DataTypes.STRING,
+        client_id: DataTypes.STRING,
         firebase_id: DataTypes.STRING,
     });
 
