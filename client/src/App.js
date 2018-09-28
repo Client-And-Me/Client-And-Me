@@ -5,14 +5,12 @@ import Client from "./pages/Client";
 import SignIn from "./pages/SignIn";
 import SignUp from "./pages/SignUp";
 import ProviderHome from "./pages/ProviderHome";
-import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
 import PasswordForget from "./pages/PasswordForget";
 
 const App = () => (
   <Router>
     <div>
-      <Navbar />
       <Switch>
         <Route exact path="/" component={Home} />
         <Route exact path="/SignIn" component={SignIn} />
