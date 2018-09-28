@@ -21,3 +21,4 @@ db.sequelize.sync({ force: true }).then(function () {
     });
 });
 
+//fuck you github!!!
