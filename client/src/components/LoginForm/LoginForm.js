@@ -15,7 +15,7 @@ const INITIAL_STATE = {
     error: null,
 };
 
-class SignInForm extends Component {
+class LoginForm extends Component {
     constructor(props) {
         super(props);
 
@@ -105,10 +105,10 @@ class SignInForm extends Component {
                             </div>
                             <div className="row">
                                 <div className="input-field col s6 m6 l6">
-                                    <p className="margin medium-small"><a href="/register">Register Now!</a></p>
+                                    <p className="margin medium-small"><a href="/register">Register</a></p>
                                 </div>
                                 <div className="input-field col s6 m6 l6">
-                                    <p className="margin right-align medium-small"><a href="/password-forget">Forgot password ?</a></p>
+                                    <p className="margin right-align medium-small"><a href="/forgot-password">Forgot Password</a></p>
                                 </div>
                             </div>
                             {error && <p>{error.message}</p>}
@@ -123,7 +123,7 @@ class SignInForm extends Component {
 
 
 export {
-    SignInForm,
+    LoginForm,
 };
 
 

@@ -1,27 +1,27 @@
 import React from "react";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import Home from "./pages/Home";
-import Client from "./pages/Client";
-import SignIn from "./pages/SignIn";
-import SignUp from "./pages/SignUp";
+import ClientHome from "./pages/ClientHome";
+import Login from "./pages/Login";
+import Register from "./pages/Register";
 import ProviderHome from "./pages/ProviderHome";
-import Navbar from "./components/Navbar";
-import Footer from "./components/Footer";
-import PasswordForget from "./pages/PasswordForget";
+import ProviderClients from "./pages/ProviderClients";
 import ProviderAppointments from "./pages/ProviderAppointments";
+import Footer from "./components/Footer";
+import ForgotPassword from "./pages/ForgotPassword";
 
 const App = () => (
   <Router>
     <div>
-      <Navbar />
       <Switch>
         <Route exact path="/" component={Home} />
-        <Route exact path="/SignIn" component={SignIn} />
-        <Route exact path="/register" component={SignUp} />
-        <Route exact path="/client" component={Client} />
-        <Route exact path="/providerhome" component={ProviderHome} />
-        <Route exact path="/password-forget" component={PasswordForget} />
-        <Route exact path="/providerappointments" component={ProviderAppointments} />
+        <Route exact path="/login" component={Login} />
+        <Route exact path="/register" component={Register} />
+        <Route exact path="/client-home" component={ClientHome} />
+        <Route exact path="/provider-home" component={ProviderHome} />
+        <Route exact path="/provider-clients" component={ProviderClients} />
+        <Route exact path="/provider-appointments" component={ProviderAppointments} />
+        <Route exact path="/forgot-password" component={ForgotPassword} />
       </Switch>
       <Footer />
     </div>

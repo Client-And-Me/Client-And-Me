@@ -6,13 +6,16 @@ import ProfileText from "../../components/ProfileText";
 import Title from "../../components/Title";
 import FullCalendar from "../../components/FullCalendar";
 import CollapsibleAccordion from "../../components/CollapsibleAccordion";
+import NavbarClient from "../../components/Navbar/NavbarClient";
 
-class Client extends Component {
+class ClientHome extends Component {
     state = {
     };
 
     render() {
         return (
+        <div>
+        <NavbarClient />
         <Section>
         <Row>
           <Col s={4}>
@@ -35,8 +38,9 @@ class Client extends Component {
           </Col>
         </Row>
       </Section>
+          </div>
         );
     }
 }
 
-export default Client;
+export default ClientHome;
