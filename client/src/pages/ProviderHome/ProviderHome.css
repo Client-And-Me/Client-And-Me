@@ -1,0 +1,7 @@
+.card img {
+    object-fit: cover;
+}
+.card img.materialized.active {
+    max-height: none;
+    object-fit: none;
+}

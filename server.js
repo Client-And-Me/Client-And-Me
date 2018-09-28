@@ -2,6 +2,7 @@ const express = require("express");
 const bodyParser = require("body-parser");
 const routes = require("./routes");
 const app = express();
+const db = require("./models");
 const PORT = process.env.PORT || 3001;
 
 // Define middleware here
@@ -14,7 +15,10 @@ if (process.env.NODE_ENV === "production") {
 // Add routes, both API and view
 app.use(routes);
 
-// Start the API server
-app.listen(PORT, function () {
-    console.log(`🌎  ==> API Server now listening on PORT ${PORT}!`);
+db.sequelize.sync({ force: true }).then(function () {
+    app.listen(PORT, function () {
+        console.log("App listening on PORT " + PORT);
+    });
 });
+
+//fuck you github!!!

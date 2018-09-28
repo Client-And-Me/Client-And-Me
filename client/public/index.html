@@ -4,14 +4,14 @@
 <head>
   <meta charset="utf-8">
   <!-- Favicon -->
-  <link rel="shortcut icon" type="image/png" href="/public/images/favicon.png">
+  <link rel="shortcut icon" type="image/png" href="./assets/images/favicon.png">
   <!-- Google Fonts & Icons -->
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
   <!-- Compiled and minified CSS -->
-  <link rel="stylesheet" href="./styles/slideshow.css" media="screen" title="no title" charset="utf-8">
-  <link rel="stylesheet" href="./styles/styles.css" media="screen" title="no title" charset="utf-8">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fullcalendar/3.9.0/fullcalendar.min.css">
+  <link rel="stylesheet" href="./assets/styles/slideshow.css" media="screen" title="no title" charset="utf-8">
+  <link rel="stylesheet" href="./assets/styles/styles.css" media="screen" title="no title" charset="utf-8">
+  <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fullcalendar/3.9.0/fullcalendar.min.css"> -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-rc.2/css/materialize.min.css">
   <!-- Compiled and minified JavaScript -->
 
@@ -23,7 +23,98 @@
   <noscript>
     You need to enable JavaScript to run this app.
   </noscript>
+
+  <!-- background image code -->
+  <ul class="cb-slideshow">
+    <li>
+      <span>Image 01</span>
+    </li>
+    <li>
+      <span>Image 02</span>
+    </li>
+    <li>
+      <span>Image 03</span>
+    </li>
+    <li>
+      <span>Image 04</span>
+    </li>
+    <li>
+      <span>Image 05</span>
+    </li>
+    <li>
+      <span>Image 06</span>
+    </li>
+    <li>
+      <span>Image 07</span>
+    </li>
+    <li>
+      <span>Image 08</span>
+    </li>
+    <li>
+      <span>Image 09</span>
+    </li>
+    <li>
+      <span>Image 10</span>
+    </li>
+  </ul>
+
   <div id="root"></div>
+
+  <div class="modal modal-fixed-footer" id="newAppt">
+    <br>
+    <div id='appt'>
+      <div id='apptType'>
+        <div class='row'>
+          <form class='col s12'>
+            <a href='#!' data-id="" class='waves-effect red waves-light btn-floating modal-action modal-close right' id='close-btn'>
+              <i class="material-icons">close</i>
+            </a>
+            <div class='row'>
+              <div class='input-field col s12'>
+                <input id='client_name' type='text' class='validate'>
+                <label for='client_name'>Client Name:</label>
+              </div>
+            </div>
+            <div class='row'>
+              <div class='input-field col s4'>
+                <input id="start" type="text" class="datepicker">
+                <label for="start">Start Date:</label>
+              </div>
+              <div class='input-field col s2'>
+                <input id="start-time" type="text" class="timepicker">
+                <label for="start-time">Start Time:</label>
+              </div>
+              <div class='input-field col s3'>
+                <input id="duration-hour" type="number" placeholder="Hours" step="1" min="0" max="24" class="size-36 center-align validate tooltipped"
+                  data-position="bottom" data-tooltip="Hour">
+                <label>Appointment Duration</label>
+                <span class="helper-text" data-error="Between 0 and 24 Hours." data-success=""></span>
+              </div>
+              <div class='input-field col s3'>
+                <input id="duration-min" type="number" placeholder="Minutes" step="1" min="0" max="60" class="size-36 center-align validate tooltipped"
+                  data-position="bottom" data-tooltip="Minute">
+                <span class="helper-text" data-error="Between 0 and 60 Minutes." data-success=""></span>
+              </div>
+            </div>
+            <div class='row'>
+              <div class='input-field col s12'>
+                <input id='note' type='text' class='validate'>
+                <label for='note'>Note (optional):</label>
+              </div>
+              <div class='modal-footer center-align'>
+                <a href='#!' data-id=" " class='waves-effect red waves-light btn modal-action modal-close left' id='delete-btn'>Delete</a>
+                <a href='#!' data-id=" " class='waves-effect waves-light btn modal-action modal-close' id='modal-btn'>Submit
+                  <i class='material-icons right'>send</i>
+                </a>
+              </div>
+              <br>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+
   <!--
       This HTML file is a template.
       If you open it directly in the browser, you will see an empty page.
@@ -34,9 +125,17 @@
       To begin the development, run `npm start` or `yarn start`.
       To create a production bundle, use `npm run build` or `yarn build`.
     -->
+  <script src="https://www.gstatic.com/firebasejs/5.4.1/firebase.js"></script>
   <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-rc.2/js/materialize.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/fullcalendar/3.9.0/fullcalendar.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.98.0/js/materialize.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+  <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/fullcalendar/3.9.0/fullcalendar.min.js"></script> -->
+  <script>
+    $(document).ready(function () {
+      M.AutoInit();
+
+    });
+  </script>
 </body>
 
 </html>

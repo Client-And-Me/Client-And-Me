@@ -1,0 +1,130 @@
+.font {
+  font-family: 'Montserrat', sans-serif !important;
+}
+
+.center {
+  text-align: center !important;
+}
+
+.brandColor {
+  background-color: #648c9f !important;
+}
+
+.logOut {
+  padding-right: 25px !important;
+}
+
+.list-group-item {
+  line-height: 2.5;
+}
+
+/* icon prefix focus color */
+
+.input-field .prefix.active {
+  color: rgb(30, 146, 159);
+}
+
+.indicator {
+  background-color: rgb(255, 255, 255) !important;
+}
+
+.tabs {
+  background-color: #648c9f !important;
+}
+
+.tabs .tab a {
+  color: aliceblue !important;
+}
+
+.brand-logo {
+  padding-left: 25px !important;
+}
+
+.login {
+  margin-top: 100px;
+}
+
+.nav-wrapper {
+  background-color: #648c9f !important;
+}
+
+.btn {
+  background-color: #648c9f !important;
+}
+
+.warning {
+  padding-top: 60px !important;
+}
+
+.profile {
+  padding-top: 60px !important;
+}
+
+.profileName {
+  font-size: 28px;
+}
+
+.appointments {
+  padding: 40px !important;
+}
+
+.calendar {
+  padding-top: 60px !important;
+}
+
+.card {
+  border-radius: 10px !important;
+  background-color: rgba(255, 255, 255, 0.92) !important;
+}
+
+img {
+  border-top-left-radius: 10px !important;
+  border-top-right-radius: 10px !important;
+}
+
+#submit, #upload{
+  display: none;
+}
+
+#upload-photo-label {
+  border: 1px solid #cccccc;
+  padding: 5px 30px;
+  font-family:arial;
+  font-size: 13px;
+}
+
+#upload-photo-label:active{
+  background: #ccc;
+}
+
+table.striped>tbody>tr:nth-child(odd) {
+  background-color: rgba(160, 160, 160, 0.646) !important;
+}
+
+.tableBody {
+  display:block;
+  height:320px;
+  overflow:auto;
+  }
+  .tableHead, .tableBody .tableRow {
+  display:table;
+  width:100%;
+  table-layout:fixed;
+  }
+  /* .tableHead {
+  width: calc( 100% - 1em )
+  } */
+  .theTable {
+  width:100%;
+  }
+  .table-btn{
+    width: 75px;
+  }
+
+  #addApptBtn{
+    background-color: #648c9f !important;
+  }
+
+  .size-36 {
+    font-size: 36px !important;
+    }

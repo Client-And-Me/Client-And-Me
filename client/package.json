@@ -1,9 +1,17 @@
 {
   "name": "client",
+  "proxy": "http://localhost:3001/",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "axios": "^0.18.0",
     "babel": "^6.23.0",
+    "classnames": "^2.2.6",
+    "firebase": "^5.5.1",
+    "fullcalendar": "^3.9.0",
+    "fullcalendar-reactwrapper": "^1.0.7",
+    "materialize-css": "^1.0.0",
+    "prop-types": "^15.6.2",
     "react": "^16.5.1",
     "react-dom": "^16.5.1",
     "react-materialize": "^2.4.5",
