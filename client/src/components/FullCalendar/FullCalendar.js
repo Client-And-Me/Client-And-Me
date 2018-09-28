@@ -1,5 +1,6 @@
 import React from "react";
 import moment from "moment"
+import API from "../../utils/API";
 
 import FullCalendar from "fullcalendar-reactwrapper";
 import "fullcalendar/dist/fullcalendar.css";
@@ -22,7 +23,18 @@ class Calendar extends React.Component {
         console.log(event)
     };
 
-
+    getAppointments = () => {
+        API.getAppts(
+            // this.state.firebase_id
+        )
+            .then(res =>
+                this.setState({
+                    events: res.data,
+                }),
+                
+            )
+            .catch(err => console.log(err));
+    };
 
     constructor(props) {
         super(props);
@@ -89,7 +101,7 @@ class Calendar extends React.Component {
                     events={this.state.events}
                     eventClick={
                         // function (calEvent, jsEvent, view, resourceObj) { console.log(calEvent) }
-                        this.eventClick
+                        this.getAppointments
                     }
                     eventDrop={
                         //function (event, delta, revertFunc) { console.log(event.title + " was dropped on " + event.start.format()) }
