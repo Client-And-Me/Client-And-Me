@@ -1,5 +1,8 @@
 import React, { Component } from "react";
 import FullCalendar from "../../components/FullCalendar";
+// import { Link } from "react-router-dom";
+// import "./ProviderAppointments.css";
+import { CardTitle, Card, Col, Row, Section } from "react-materialize";
 import "./ProviderAppointments.css";
 import { Card, Col, Row, Section } from "react-materialize";
 import NavbarProvider from "../../components/Navbar/NavbarProvider";
