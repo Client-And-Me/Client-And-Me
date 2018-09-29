@@ -5,11 +5,11 @@ const db = require("../models");
 module.exports = {
 
     findAll: function (req, res) {
-        db.client
+        db.pc_join
             .findAll(
                 //{ where: { firebase_id: req.param } }
             )
-            .then(dbClient => res.json(dbClient))
+            .then(dbPC_join => res.json(dbPC_join))
             .catch(err => res.status(422).json(err));
     },
 
