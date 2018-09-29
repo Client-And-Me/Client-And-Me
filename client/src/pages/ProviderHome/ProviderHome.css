@@ -1,12 +1,8 @@
-/* .card img {
-    object-fit: cover;
+.height {
+    height: 520px !important;
 }
 
-.card img.materialized.active {
-    max-height: none;
-    object-fit: none;
-} */
-
-.top-row {
-    height: 500px !important;
+.customContainer {
+    margin-left: 5% !important;
+    margin-right: 5% !important;
 }

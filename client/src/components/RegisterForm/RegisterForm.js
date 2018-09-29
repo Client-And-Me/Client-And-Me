@@ -26,7 +26,7 @@ class RegisterForm extends Component {
     onSubmit = (event) => {
 
         const {
-            name,
+            // name,
             email,
             passwordOne,
         } = this.state;

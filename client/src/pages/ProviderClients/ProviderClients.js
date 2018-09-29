@@ -1,7 +1,6 @@
 import React, { Component } from "react";
-import FullCalendar from "../../components/FullCalendar";
-import Modal from "../../components/Modal"
-import { CardTitle, Card, Col, Row, Section } from "react-materialize";
+import "./ProviderClients.css";
+import { Row, Section } from "react-materialize";
 import NavbarProvider from "../../components/Navbar/NavbarProvider";
 
 
@@ -13,7 +12,7 @@ class ProviderClients extends Component {
         return (
             <div>
                 <NavbarProvider />
-                <Section>
+                <Section className="customContainer">
                     <Row>
                         <h1>Hello World</h1>
                     </Row>
