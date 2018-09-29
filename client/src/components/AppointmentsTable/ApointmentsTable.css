@@ -1,3 +1,11 @@
 .margin {
     margin-bottom: 0px;
 }
+
+.height {
+    height: 520px !important;
+}
+
+.marginLeft {
+    margin-left: 300px !important;
+}

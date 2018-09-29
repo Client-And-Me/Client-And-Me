@@ -8,13 +8,21 @@ class AppointmentsTable extends Component {
     render() {
 
         return (
-
             <div className="card appointments left-align">
                 <div className="row margin">
                     <div className="col s12 m12 l12">
                         <nav>
                             <div className="nav-wrapper offset-s1">
                                 <a href="#" className="brand-logo font">Appointments</a>
+            
+                    <div className="card appointments left-align height marginLeft">
+                        <div className="row margin">
+                            <div className="col s12 m12 l12">
+                                <nav>
+                                    <div className="nav-wrapper offset-s1">
+                                        <a href="#" className="brand-logo font">Appointments</a>
+                                    </div>
+                                </nav>
                             </div>
                         </nav>
                     </div>
@@ -38,7 +46,6 @@ class AppointmentsTable extends Component {
                                             </td>
                                 </tr>
                             </tbody>
-
                         </table>
                         <ApptModalButton />
                     </div>
