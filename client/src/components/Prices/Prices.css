@@ -18,11 +18,6 @@
     background-color: #b7b7b7;
 }
 
-.cardiB {
-    min-height: 300px !important;
-    min-width: 200px !important;
-}
-
 .card-action {
     display: flex;
     flex-direction: column;
