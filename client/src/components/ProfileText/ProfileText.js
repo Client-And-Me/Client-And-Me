@@ -1,6 +1,6 @@
 import React from "react";
 import "./ProfileText.css";
-import { Section, Div, Card, Row, Col } from 'react-materialize';
+import { Section, Card, Row, Col } from 'react-materialize';
 
 export default () => (
   <Section>

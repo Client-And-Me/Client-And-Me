@@ -6,7 +6,7 @@ class AppointmentsTable extends Component {
 
         return (
             
-                    <div className="card appointments left-align">
+                    <div className="card appointments left-align height marginLeft">
                         <div className="row margin">
                             <div className="col s12 m12 l12">
                                 <nav>

@@ -24,7 +24,7 @@ class LoginForm extends Component {
 
     onSubmit = (event) => {
         const {
-            loginType,
+            // loginType,
             email,
             password,
         } = this.state;
