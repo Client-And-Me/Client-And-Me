@@ -2,7 +2,6 @@ import React, { Component } from "react";
 // import Jumbotron from "../../components/Jumbotron";
 import FullCalendar from "../../components/FullCalendar";
 // import { Link } from "react-router-dom";
-import Modal from "../../components/Modal"
 // import "./ProviderAppointments.css";
 import { CardTitle, Card, Col, Row, Section } from "react-materialize";
 import NavbarProvider from "../../components/Navbar/NavbarProvider";

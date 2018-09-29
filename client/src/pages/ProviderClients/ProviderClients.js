@@ -1,7 +1,5 @@
 import React, { Component } from "react";
-import FullCalendar from "../../components/FullCalendar";
-import Modal from "../../components/Modal"
-import { CardTitle, Card, Col, Row, Section } from "react-materialize";
+import { Row, Section } from "react-materialize";
 import NavbarProvider from "../../components/Navbar/NavbarProvider";
 
 
