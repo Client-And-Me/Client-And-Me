@@ -1,0 +1,64 @@
+row {
+    margin: 0% !important;
+    padding: 0% !important;
+}
+
+input {
+    margin: 0px !important;
+}
+
+.input-field, .rememberMe {
+    padding-left: 0px !important;
+    padding-right: 0px !important;
+}
+
+.rememberMe {
+    padding-top: 10px !important;
+    padding-bottom: 10px !important;
+}
+
+.loginCard {
+    margin-top: 5% !important;
+    margin-bottom: 5% !important;
+    padding-left: 3% !important;
+    padding-right: 3% !important;
+}
+
+.email, .password {
+    padding-top: 0px !important;
+    padding-left: 0px !important;
+    padding-right: 5px !important;
+}
+
+.email {
+    padding-bottom: 0px !important;
+}
+
+.password {
+    padding-bottom: 10px !important;
+}
+
+.registerLink, .forgotPasswordLink {
+    color: #ffb14e !important;
+}
+
+.login-form-text {
+    font-size: 3em !important;
+    margin: 0px !important;
+}
+
+.loginCard, input {
+    color: #779aab !important;
+}
+
+input {
+    margin-bottom: 0px !important;
+}
+
+label {
+    color: #779aab !important;
+}
+
+.brandColor {
+    background-color: #779aab !important;
+}

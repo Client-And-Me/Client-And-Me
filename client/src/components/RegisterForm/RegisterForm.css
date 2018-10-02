@@ -1,0 +1,22 @@
+.login-form-text {
+    font-size: 3em !important;
+    margin-top: 5% !important;
+    margin-bottom: 0px !important;
+}
+
+form {
+    margin: 5%;
+}
+
+.select-dropdown {
+    margin-top: 5% !important;
+}
+
+input {
+    margin-top: 5% !important;
+}
+
+button {
+    margin-top: 5% !important;
+    margin-bottom: 5% !important;
+}
