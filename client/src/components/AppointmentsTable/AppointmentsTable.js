@@ -1,6 +1,6 @@
-import React, { Component } from 'react';
-import ApptModalButton from '../ApptModalButton/apptModalButton';
-
+import React, { Component } from "react";
+import ApptModalButton from "../ApptModalButton/apptModalButton";
+//import { Row, Input } from "react-materialize";
 class AppointmentsTable extends Component {
 
     render() {
