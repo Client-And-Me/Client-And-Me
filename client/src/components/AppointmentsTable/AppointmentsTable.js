@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Modal } from 'react-materialize';
+import ApptModalButton from '../ApptModalButton/apptModalButton';
 
 class AppointmentsTable extends Component {
 
@@ -7,7 +7,7 @@ class AppointmentsTable extends Component {
 
         return (
 
-            <div className="card appointments left-align height marginLeft">
+            <div className="card appointments left-align">
                 <div className="row margin">
                     <div className="col s12 m12 l12">
                         <nav>
@@ -38,14 +38,12 @@ class AppointmentsTable extends Component {
                             </tbody>
 
                         </table>
-                        <Modal>
-
-                        </Modal>
+                        <ApptModalButton />
                     </div>
                 </div>
             </div>
 
-        )
+        );
     }
 }
 
