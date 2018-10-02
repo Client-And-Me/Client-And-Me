@@ -5,7 +5,10 @@ export default {
         return axios.get("/api/appointments")
     },
     saveAppointment: function (appointmentData) {
-        return axios.post("/api/articles", appointmentData);
+        return axios.post("");
+    },
+    createUser: function (params) {
+        return axios.post()
     }
 }
 

@@ -31,10 +31,25 @@ class Calendar extends React.Component {
                 this.setState({
                     events: res.data,
                 }),
-                
+
             )
             .catch(err => console.log(err));
     };
+
+    componentDidMount() {
+        console.log("componenet mount started");
+        API.getAppts(
+            // this.state.firebase_id
+        )
+            .then(res =>
+                this.setState({
+                    events: res.data,
+                }),
+
+            )
+            .catch(err => console.log(err));
+        console.log("componenet mount end");
+    }
 
     constructor(props) {
         super(props);
@@ -101,7 +116,7 @@ class Calendar extends React.Component {
                     events={this.state.events}
                     eventClick={
                         // function (calEvent, jsEvent, view, resourceObj) { console.log(calEvent) }
-                        this.getAppointments
+                        this.eventClick
                     }
                     eventDrop={
                         //function (event, delta, revertFunc) { console.log(event.title + " was dropped on " + event.start.format()) }

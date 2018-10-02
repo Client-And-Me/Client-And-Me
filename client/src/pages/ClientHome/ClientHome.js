@@ -1,7 +1,5 @@
 import React, { Component } from "react";
-import { Section, Div, Card, Row, Col, CardTitle } from 'react-materialize';
-// import { Col, Row, Container } from "../../components/Grid";
-import ProfilePhoto from "../../components/ProfilePhoto";
+import { Section, Card, Row, Col, CardTitle } from 'react-materialize';
 import ProfileText from "../../components/ProfileText";
 import Title from "../../components/Title";
 import FullCalendar from "../../components/FullCalendar";
