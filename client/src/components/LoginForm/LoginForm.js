@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-
+import "./LoginForm.css";
 import { auth } from '../../firebase';
 
 
@@ -54,9 +54,9 @@ class LoginForm extends Component {
             email === '';
 
         return (
-            <div className="container">
+            <div>
                 <div id="login-page" className="row">
-                    <div className="col s12 z-depth-4 card-panel">
+                    <div className="col s12 m4 l4 offset-l4 offset-m4 z-depth-2 hoverable card-panel loginCard">
                         <form className="login-form" onSubmit={this.onSubmit}>
                             <div className="row">
                                 <div className="input-field col s12 center">
@@ -91,24 +91,24 @@ class LoginForm extends Component {
                                 </div>
                             </div>
                             <div className="row">
-                                <div className="row margin col s12">
+                                <div className="row margin col s12 rememberMe">
                                     <label>
                                         <input type="checkbox" />
-                                        <span>Remember Me</span>
+                                        <span >Remember Me</span>
                                     </label>
                                 </div>
                             </div>
                             <div className="row">
                                 <div className="input-field col s12">
-                                    <a href="" className="btn waves-effect waves-light pink accent-2 col s12" disabled={isInvalid} type="submit">Sign In</a>
+                                    <a href="" className="btn waves-effect waves-light col s12" disabled={isInvalid} type="submit">Login</a>
                                 </div>
                             </div>
                             <div className="row">
                                 <div className="input-field col s6 m6 l6">
-                                    <p className="margin medium-small"><a href="/register">Register</a></p>
+                                    <p className="margin medium-small"><a href="/register" className="registerLink">Register</a></p>
                                 </div>
                                 <div className="input-field col s6 m6 l6">
-                                    <p className="margin right-align medium-small"><a href="/forgot-password">Forgot Password</a></p>
+                                    <p className="margin right-align medium-small"><a href="/forgot-password" className="forgotPasswordLink">Forgot Password</a></p>
                                 </div>
                             </div>
                             {error && <p>{error.message}</p>}
