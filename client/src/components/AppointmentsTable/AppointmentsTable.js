@@ -1,13 +1,15 @@
 import React, { Component } from "react";
 import ApptModalButton from "../ApptModalButton/apptModalButton";
 //import { Row, Input } from "react-materialize";
+import "./AppointmentsTable.css";
+
 class AppointmentsTable extends Component {
 
     render() {
 
         return (
 
-            <div className="card appointments left-align">
+            <div className="card appointments height left-align">
                 <div className="row margin">
                     <div className="col s12 m12 l12">
                         <nav>
