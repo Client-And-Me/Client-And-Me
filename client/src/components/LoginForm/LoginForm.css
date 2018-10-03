@@ -62,3 +62,9 @@ label {
 .brandColor {
     background-color: #779aab !important;
 }
+.material-icons {
+    margin-top: 20px;
+}
+.input-field label:not(.label-icon).active {
+    transform: translateY(-20%);
+}
