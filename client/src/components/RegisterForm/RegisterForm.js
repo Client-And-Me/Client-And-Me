@@ -41,7 +41,6 @@ class RegisterForm extends Component {
             .then(authUser => {
 
                 this.setState({ ...INITIAL_STATE });
-
                 let param = {
                     first_name: firstName,
                     last_name: lastName,
@@ -51,6 +50,7 @@ class RegisterForm extends Component {
                 };
                 console.log(param);
                 this.saveUserToDatabase(param);
+                this.emailSignIn(email, passwordOne);
 
             })
             .catch(error => {
