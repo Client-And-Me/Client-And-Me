@@ -50,7 +50,7 @@ class ApptModalButton extends Component {
         return (
 
             <Modal
-                fixedFooter
+           
                 trigger={<Button className="btn-floating btn-large right z-depth-5 #648c9f" id="addApptBtn">
                     <i className="material-icons">add</i>
                 </Button>}

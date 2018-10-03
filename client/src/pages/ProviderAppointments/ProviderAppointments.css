@@ -2,3 +2,9 @@
     margin-left: 5% !important;
     margin-right: 5% !important;
 }
+.appointmentDetails {
+    height: 504px;
+}
+.calendar {
+    height: 520px !important;
+}
