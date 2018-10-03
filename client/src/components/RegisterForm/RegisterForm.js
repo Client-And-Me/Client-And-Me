@@ -1,9 +1,12 @@
-import React, { Component } from 'react';
-
-import { auth } from '../../firebase';
+import React, { Component } from "react";
+import API from "../../utils/API";
+import { auth } from "../../firebase";
+import { Input } from "react-materialize";
 
 const INITIAL_STATE = {
-    username: '',
+    firstName: '',
+    lastName: '',
+    brandName: '',
     email: '',
     passwordOne: '',
     passwordTwo: '',
@@ -26,16 +29,27 @@ class RegisterForm extends Component {
     onSubmit = (event) => {
 
         const {
-            // name,
+            firstName,
+            lastName,
+            brandName,
             email,
             passwordOne,
         } = this.state;
 
         auth.createUser(email, passwordOne)
             .then(authUser => {
+
                 this.setState({ ...INITIAL_STATE });
 
-                // create user in sql
+                let param = {
+                    first_name: firstName,
+                    last_name: lastName,
+                    brand_name: brandName,
+                    email: email,
+                    firbase_id: authUser.user.uid
+                };
+
+                this.saveUserToDatabase(param);
 
             })
             .catch(error => {
@@ -46,10 +60,34 @@ class RegisterForm extends Component {
 
     }
 
+    saveUserToDatabase(body) {
+
+        API.createProvider(body)
+            .then(function (response) {
+                console.log(response);
+            })
+            .catch(function (error) {
+                console.log(error);
+                console.log(body);
+            });
+
+    }
+
+    handleInputChange = event => {
+        // Destructure the name and value properties off of event.target
+        // Update the appropriate state
+        const { name, value } = event.target;
+        this.setState({
+            [name]: value
+        });
+    };
+
     render() {
 
         const {
-            username,
+            firstName,
+            lastName,
+            brandName,
             email,
             passwordOne,
             passwordTwo,
@@ -60,22 +98,41 @@ class RegisterForm extends Component {
             passwordOne !== passwordTwo ||
             passwordOne === '' ||
             email === '' ||
-            username === '';
+            firstName === '' ||
+            lastName === '' ||
+            brandName === '';
 
         return (
             <div class="container">
                 <form onSubmit={this.onSubmit}>
-                    <select>
+                    <Input
+                        onChange={this.handleInputChange}
+                        s={12}
+                        type='select'>
+
                         <option value="" disabled selected>Sign up as Client or Provider</option>
                         <option value="client">Client</option>
                         <option value="provider">Provider</option>
-                    </select>
+                    </Input>
 
                     <input
-                        value={username}
-                        onChange={event => this.setState(byPropKey('username', event.target.value))}
+                        value={firstName}
+                        onChange={event => this.setState(byPropKey('firstName', event.target.value))}
                         type="text"
-                        placeholder="Full Name" />
+                        placeholder="First Name" />
+
+
+                    <input
+                        value={lastName}
+                        onChange={event => this.setState(byPropKey('lastName', event.target.value))}
+                        type="text"
+                        placeholder="Last Name" />
+
+                    <input
+                        value={brandName}
+                        onChange={event => this.setState(byPropKey('brandName', event.target.value))}
+                        type="text"
+                        placeholder="Brand Name" />
 
                     <input
                         value={email}

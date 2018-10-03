@@ -27,14 +27,14 @@ const ApptModalButton = () => {
                 <Input name='on' type='time' onChange={function(e, value) {}} /> */}
                 <Input id="start" className="datepicker" label="Start Date:" s={4} />
                 <Input id="start-time" className="timepicker" label="Start Time:" s={2} />
-                <Input id="duration-hour" label="Appointment Duration" type="number" placeholder="Hours" step={1} min={0} max={24} className="size-36 center-align validate tooltipped" data-position="bottom" data-tooltip="Hour" s={3} />
-                <Input id="duration-min" type="number" placeholder="Minutes" step={1} min={0} max={60} className="size-36 center-align validate tooltipped" data-position="bottom" data-tooltip="Minute" s={3} />
+                <Input id="duration-hour" label="Appointment Duration" type="number" placeholder="Hours" step={1} min={0} max={24} className="size-36 center-align validate tooltipped" data-position="bottom" data-tooltip="Hours" s={3} />
+                <Input id="duration-min" type="number" placeholder="Minutes" step={1} min={0} max={60} className="size-36 center-align validate tooltipped" data-position="bottom" data-tooltip="Minutes" s={3} />
             </Row>
             <Row>
                 <Input id="note" className="validate" label="Note (optional):" s={12} />
             </Row>
             <Row>
-            <Button className="waves-effect red waves-light btn modal-action modal-close left" id="delete-btn">Delete</Button>
+                <Button className="waves-effect red waves-light btn modal-action modal-close left" id="delete-btn">Delete</Button>
             </Row>
         </Modal >
     );
