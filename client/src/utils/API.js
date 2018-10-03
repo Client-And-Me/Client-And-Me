@@ -7,8 +7,9 @@ export default {
     saveAppointment: function (appointmentData) {
         return axios.post("");
     },
-    createProvider: function (poviderData) {
-        return axios.post("/api/provider")
+    createProvider: function (providerData) {
+        console.log("api here");
+        return axios.post("/api/provider", providerData);
     }
 }
 
