@@ -48,7 +48,7 @@ class RegisterForm extends Component {
                     email: email,
                     firbase_id: authUser.user.uid
                 };
-
+                console.log(param);
                 this.saveUserToDatabase(param);
 
             })
@@ -61,16 +61,19 @@ class RegisterForm extends Component {
     }
 
     saveUserToDatabase(body) {
+        console.log(this.state.userType);
+        if (this.state.userType === "provider") {
+            API.createProvider(body)
+                .then(function (response) {
+                    console.log(response);
+                })
+                .catch(function (error) {
+                    console.log(error);
+                    console.log(body);
+                });
+        }
 
-        API.createProvider(body)
-            .then(function (response) {
-                console.log(response);
-            })
-            .catch(function (error) {
-                console.log(error);
-                console.log(body);
-            });
-
+        //else create user
     }
 
     handleInputChange = event => {
@@ -106,6 +109,7 @@ class RegisterForm extends Component {
             <div class="container">
                 <form onSubmit={this.onSubmit}>
                     <Input
+                        name="userType"
                         onChange={this.handleInputChange}
                         s={12}
                         type='select'>
