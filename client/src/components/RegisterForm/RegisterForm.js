@@ -1,9 +1,12 @@
-import React, { Component } from 'react';
-import "./RegisterForm.css";
-import { auth } from '../../firebase';
+import React, { Component } from "react";
+import API from "../../utils/API";
+import { auth } from "../../firebase";
+import { Input } from "react-materialize";
 
 const INITIAL_STATE = {
-    username: '',
+    firstName: '',
+    lastName: '',
+    brandName: '',
     email: '',
     passwordOne: '',
     passwordTwo: '',
@@ -26,16 +29,27 @@ class RegisterForm extends Component {
     onSubmit = (event) => {
 
         const {
-            // name,
+            firstName,
+            lastName,
+            brandName,
             email,
             passwordOne,
         } = this.state;
 
         auth.createUser(email, passwordOne)
             .then(authUser => {
+
                 this.setState({ ...INITIAL_STATE });
 
-                // create user in sql
+                let param = {
+                    first_name: firstName,
+                    last_name: lastName,
+                    brand_name: brandName,
+                    email: email,
+                    firbase_id: authUser.user.uid
+                };
+
+                this.saveUserToDatabase(param);
 
             })
             .catch(error => {
@@ -46,10 +60,34 @@ class RegisterForm extends Component {
 
     }
 
+    saveUserToDatabase(body) {
+
+        API.createProvider(body)
+            .then(function (response) {
+                console.log(response);
+            })
+            .catch(function (error) {
+                console.log(error);
+                console.log(body);
+            });
+
+    }
+
+    handleInputChange = event => {
+        // Destructure the name and value properties off of event.target
+        // Update the appropriate state
+        const { name, value } = event.target;
+        this.setState({
+            [name]: value
+        });
+    };
+
     render() {
 
         const {
-            username,
+            firstName,
+            lastName,
+            brandName,
             email,
             passwordOne,
             passwordTwo,
@@ -60,58 +98,66 @@ class RegisterForm extends Component {
             passwordOne !== passwordTwo ||
             passwordOne === '' ||
             email === '' ||
-            username === '';
+            firstName === '' ||
+            lastName === '' ||
+            brandName === '';
 
         return (
-            <div>
-                <div id="login-page" className="row">
-                    <div className="col s12 m4 l4 offset-l4 offset-m4 z-depth-2 hoverable card-panel loginCard">
-                        <p className="center login-form-text">client&me</p>
-                        <form onSubmit={this.onSubmit}>
-                            <select>
-                                <option value="" disabled selected>Sign up as Client or Provider</option>
-                                <option value="client">Client</option>
-                                <option value="provider">Provider</option>
-                            </select>
+            <div class="container">
+                <form onSubmit={this.onSubmit}>
+                    <Input
+                        onChange={this.handleInputChange}
+                        s={12}
+                        type='select'>
 
-                            <input
-                                value={username}
-                                onChange={event => this.setState(byPropKey('username', event.target.value))}
-                                type="text"
-                                placeholder="Full Name" />
+                        <option value="" disabled selected>Sign up as Client or Provider</option>
+                        <option value="client">Client</option>
+                        <option value="provider">Provider</option>
+                    </Input>
 
-                            <input
-                                value={email}
-                                onChange={event => this.setState(byPropKey('email', event.target.value))}
-                                type="text"
-                                placeholder="Email Address" />
+                    <input
+                        value={firstName}
+                        onChange={event => this.setState(byPropKey('firstName', event.target.value))}
+                        type="text"
+                        placeholder="First Name" />
 
-                            <input
-                                value={passwordOne}
-                                onChange={event => this.setState(byPropKey('passwordOne', event.target.value))}
-                                type="password"
-                                placeholder="Password" />
 
-                            <input
-                                value={passwordTwo}
-                                onChange={event => this.setState(byPropKey('passwordTwo', event.target.value))}
-                                type="password"
-                                placeholder="Confirm Password" />
+                    <input
+                        value={lastName}
+                        onChange={event => this.setState(byPropKey('lastName', event.target.value))}
+                        type="text"
+                        placeholder="Last Name" />
 
-                            {/* <button disabled={isInvalid} type="submit">
-                                Register
-                            </button> */}
+                    <input
+                        value={brandName}
+                        onChange={event => this.setState(byPropKey('brandName', event.target.value))}
+                        type="text"
+                        placeholder="Brand Name" />
 
-                            <div className="row">
-                                <div className="input-field col s12">
-                                    <button className="btn waves-effect waves-light col s12" disabled={isInvalid} type="submit">Register</button>
-                                </div>
-                            </div>
+                    <input
+                        value={email}
+                        onChange={event => this.setState(byPropKey('email', event.target.value))}
+                        type="text"
+                        placeholder="Email Address" />
 
-                            {error && <p>{error.message}</p>}
-                        </form>
-                    </div>
-                </div>
+                    <input
+                        value={passwordOne}
+                        onChange={event => this.setState(byPropKey('passwordOne', event.target.value))}
+                        type="password"
+                        placeholder="Password" />
+
+                    <input
+                        value={passwordTwo}
+                        onChange={event => this.setState(byPropKey('passwordTwo', event.target.value))}
+                        type="password"
+                        placeholder="Confirm Password" />
+
+                    <button disabled={isInvalid} type="submit">
+                        Sign Up
+                </button>
+
+                    {error && <p>{error.message}</p>}
+                </form>
             </div >
         );
     }
