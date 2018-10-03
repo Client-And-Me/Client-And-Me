@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import API from "../../utils/API";
 import { auth } from "../../firebase";
 import { Input } from "react-materialize";
+import "./RegisterForm.css";
 
 const INITIAL_STATE = {
     firstName: '',
@@ -106,63 +107,71 @@ class RegisterForm extends Component {
             brandName === '';
 
         return (
-            <div class="container">
-                <form onSubmit={this.onSubmit}>
-                    <Input
-                        name="userType"
-                        onChange={this.handleInputChange}
-                        s={12}
-                        type='select'>
+            <div>
+                <div id="login-page" className="row">
+                    <div className="col s12 m4 l4 offset-l4 offset-m4 z-depth-2 hoverable card-panel loginCard">
+                        <p className="center login-form-text">client&me</p>
 
-                        <option value="" disabled selected>Sign up as Client or Provider</option>
-                        <option value="client">Client</option>
-                        <option value="provider">Provider</option>
-                    </Input>
+                        <form onSubmit={this.onSubmit}>
+                            <Input
+                                name="userType"
+                                onChange={this.handleInputChange}
+                                s={12}
+                                type='select'>
 
-                    <input
-                        value={firstName}
-                        onChange={event => this.setState(byPropKey('firstName', event.target.value))}
-                        type="text"
-                        placeholder="First Name" />
+                                <option value="" disabled selected>Sign up as Client or Provider</option>
+                                <option value="client">Client</option>
+                                <option value="provider">Provider</option>
+                            </Input>
+
+                            <input
+                                value={firstName}
+                                onChange={event => this.setState(byPropKey('firstName', event.target.value))}
+                                type="text"
+                                placeholder="First Name" />
 
 
-                    <input
-                        value={lastName}
-                        onChange={event => this.setState(byPropKey('lastName', event.target.value))}
-                        type="text"
-                        placeholder="Last Name" />
+                            <input
+                                value={lastName}
+                                onChange={event => this.setState(byPropKey('lastName', event.target.value))}
+                                type="text"
+                                placeholder="Last Name" />
 
-                    <input
-                        value={brandName}
-                        onChange={event => this.setState(byPropKey('brandName', event.target.value))}
-                        type="text"
-                        placeholder="Brand Name" />
+                            <input
+                                value={brandName}
+                                onChange={event => this.setState(byPropKey('brandName', event.target.value))}
+                                type="text"
+                                placeholder="Brand Name" />
 
-                    <input
-                        value={email}
-                        onChange={event => this.setState(byPropKey('email', event.target.value))}
-                        type="text"
-                        placeholder="Email Address" />
+                            <input
+                                value={email}
+                                onChange={event => this.setState(byPropKey('email', event.target.value))}
+                                type="text"
+                                placeholder="Email Address" />
 
-                    <input
-                        value={passwordOne}
-                        onChange={event => this.setState(byPropKey('passwordOne', event.target.value))}
-                        type="password"
-                        placeholder="Password" />
+                            <input
+                                value={passwordOne}
+                                onChange={event => this.setState(byPropKey('passwordOne', event.target.value))}
+                                type="password"
+                                placeholder="Password" />
 
-                    <input
-                        value={passwordTwo}
-                        onChange={event => this.setState(byPropKey('passwordTwo', event.target.value))}
-                        type="password"
-                        placeholder="Confirm Password" />
+                            <input
+                                value={passwordTwo}
+                                onChange={event => this.setState(byPropKey('passwordTwo', event.target.value))}
+                                type="password"
+                                placeholder="Confirm Password" />
 
-                    <button disabled={isInvalid} type="submit">
-                        Sign Up
-                </button>
+                            <div className="row">
+                                <div className="input-field col s12">
+                                    <button className="btn waves-effect waves-light col s12" disabled={isInvalid} type="submit">Register</button>
+                                </div>
+                            </div>
 
-                    {error && <p>{error.message}</p>}
-                </form>
-            </div >
+                            {error && <p>{error.message}</p>}
+                        </form>
+                    </div >
+                </div>
+            </div>
         );
     }
 }
@@ -170,3 +179,9 @@ class RegisterForm extends Component {
 export {
     RegisterForm
 };
+
+
+
+
+
+
