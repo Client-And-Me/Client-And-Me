@@ -35,13 +35,13 @@ class ProviderHome extends Component {
                             </CardPanel>
                         </Col>
                     </Row>
-                    <Row>
+                    {/* <Row>
                         <Col s={12} m={10} l={10}>
                             <Row>
                                 <Input name='on' type='date' onChange={function (e, value) { }} />
                             </Row>
                         </Col>
-                    </Row>
+                    </Row> */}
                 </Section>
             </div>
         );

@@ -3,14 +3,14 @@ row {
     padding: 0% !important;
 }
 
-input {
+/* input {
     margin: 0px !important;
-}
+} */
 
-.input-field, .rememberMe {
+/* .input-field, .rememberMe {
     padding-left: 0px !important;
     padding-right: 0px !important;
-}
+} */
 
 .rememberMe {
     padding-top: 10px !important;
@@ -51,20 +51,20 @@ input {
     color: #779aab !important;
 }
 
-input {
+.loginInput {
     margin-bottom: 0px !important;
 }
 
-label {
+.loginLabel {
     color: #779aab !important;
 }
 
 .brandColor {
     background-color: #779aab !important;
 }
-.material-icons {
+/* .material-icons {
     margin-top: 20px;
-}
-.input-field label:not(.label-icon).active {
+} */
+/* .input-field label:not(.label-icon).active {
     transform: translateY(-20%);
-}
+} */
