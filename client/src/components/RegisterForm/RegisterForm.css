@@ -4,7 +4,7 @@
     margin-bottom: 0px !important;
 }
 
-form {
+#form {
     margin: 5%;
 }
 
@@ -12,11 +12,11 @@ form {
     margin-top: 5% !important;
 }
 
-input {
+.formInput {
     margin-top: 5% !important;
 }
 
-button {
+.formBtn {
     margin-top: 5% !important;
     margin-bottom: 5% !important;
 }

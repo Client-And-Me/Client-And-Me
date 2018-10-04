@@ -33,9 +33,10 @@ class AppointmentsTable extends Component {
                             </thead>
                             <tbody className="tableBody">
                                 <tr>
-                                    <td>You currently do not have any appointments scheduled. Click the + button
+                                    <td>
+                                        You currently do not have any appointments scheduled. Click the + button
                                         to add an appointment.
-                                            </td>
+                                    </td>
                                 </tr>
                             </tbody>
 

@@ -134,8 +134,9 @@ class RegisterForm extends Component {
                     <div className="col s12 m4 l4 offset-l4 offset-m4 z-depth-2 hoverable card-panel loginCard">
                         <p className="center login-form-text">client&me</p>
 
-                        <form onSubmit={this.onSubmit}>
+                        <form id="form" onSubmit={this.onSubmit}>
                             <Input
+                                className="formInput"
                                 name="userType"
                                 onChange={this.handleInputChange}
                                 s={12}
@@ -147,6 +148,7 @@ class RegisterForm extends Component {
                             </Input>
 
                             <input
+                                className="formInput"
                                 value={firstName}
                                 onChange={event => this.setState(byPropKey('firstName', event.target.value))}
                                 type="text"
@@ -154,6 +156,7 @@ class RegisterForm extends Component {
 
 
                             <input
+                                className="formInput"
                                 value={lastName}
                                 onChange={event => this.setState(byPropKey('lastName', event.target.value))}
                                 type="text"
@@ -161,29 +164,34 @@ class RegisterForm extends Component {
 
                             {this.state.userType === "provider" ? (
                                 <input
+                                    className="formInput"
                                     value={brandName}
                                     onChange={event => this.setState(byPropKey('brandName', event.target.value))}
                                     type="text"
                                     placeholder="Brand Name" />
                             ) : (<input
+                                className="formInput"
                                 value={userName}
                                 onChange={event => this.setState(byPropKey('userName', event.target.value))}
                                 type="text"
                                 placeholder="User Name" />)}
 
                             <input
+                                className="formInput"
                                 value={email}
                                 onChange={event => this.setState(byPropKey('email', event.target.value))}
                                 type="text"
                                 placeholder="Email Address" />
 
                             <input
+                                className="formInput"
                                 value={passwordOne}
                                 onChange={event => this.setState(byPropKey('passwordOne', event.target.value))}
                                 type="password"
                                 placeholder="Password" />
 
                             <input
+                                className="formInput"
                                 value={passwordTwo}
                                 onChange={event => this.setState(byPropKey('passwordTwo', event.target.value))}
                                 type="password"
@@ -191,7 +199,7 @@ class RegisterForm extends Component {
 
                             <div className="row">
                                 <div className="input-field col s12">
-                                    <button className="btn waves-effect waves-light col s12" disabled={isInvalid} type="submit">Register</button>
+                                    <button className="formBtn btn waves-effect waves-light col s12" disabled={isInvalid} type="submit">Register</button>
                                 </div>
                             </div>
 
