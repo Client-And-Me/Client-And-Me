@@ -1,6 +1,7 @@
 import React from "react";
 import moment from "moment"
 import API from "../../utils/API";
+import { auth } from "../../firebase";
 
 import FullCalendar from "fullcalendar-reactwrapper";
 import "fullcalendar/dist/fullcalendar.css";
@@ -8,24 +9,24 @@ import "fullcalendar/dist/fullcalendar.css";
 class Calendar extends React.Component {
 
     eventClick = event => {
-        console.log(event)
+        console.log(event);
     };
 
     eventDrop = event => {
-        console.log(event.start.format())
+        console.log(event.start.format());
     };
 
     eventResize = event => {
-        console.log(event.end.format())
+        console.log(event.end.format());
     };
 
     eventSelect = event => {
-        console.log(event)
+        console.log(event);
     };
 
     getAppointments = () => {
         API.getAppts(
-            // this.state.firebase_id
+            //auth.currentUser().uid
         )
             .then(res =>
                 this.setState({
@@ -34,66 +35,22 @@ class Calendar extends React.Component {
 
             )
             .catch(err => console.log(err));
+        console.log("getting appts");
+        console.log(this.state.events)
+        //console.log(auth.currentUser().uid)
     };
 
     componentDidMount() {
-        console.log("componenet mount started");
-        API.getAppts(
-            // this.state.firebase_id
-        )
-            .then(res =>
-                this.setState({
-                    events: res.data,
-                }),
-
-            )
-            .catch(err => console.log(err));
-        console.log("componenet mount end");
+        console.log("FullCalendar mount started");
+        this.getAppointments();
+        //console.log(this.state.events)
+        console.log("FullCalendar mount end");
     }
 
     constructor(props) {
         super(props);
         this.state = {
-            events: [
-                {
-                    title: "All Day Event",
-                    start: "2018-09-01"
-                },
-                {
-                    title: "Long Event",
-                    start: "2018-09-07",
-                    end: "2018-09-10"
-                },
-                {
-                    id: 999,
-                    title: "Repeating Event",
-                    start: "2018-09-09T16:00:00"
-                },
-                {
-                    id: 999,
-                    title: "Repeating Event",
-                    start: "2018-09-16T16:00:00"
-                },
-                {
-                    title: "Conference",
-                    start: "2018-09-11",
-                    end: "2018-09-13"
-                },
-                {
-                    title: "Meeting",
-                    start: "2018-09-12T10:30:00",
-                    end: "2018-09-12T12:30:00"
-                },
-                {
-                    title: "Birthday Party",
-                    start: "2018-09-13T07:00:00"
-                },
-                {
-                    title: "Click for Google",
-                    url: "http://google.com/",
-                    start: "2018-09-28"
-                }
-            ],
+            events: [],
             date: moment(),
         }
     }
@@ -129,7 +86,8 @@ class Calendar extends React.Component {
                     eventColor={"#648c9f"}
                     select={
                         // function (start, end, jsEvent, view) { console.log(start.format()) }
-                        this.eventSelect
+                        // this.eventSelect
+                        this.getAppointments
                     }
                 />
             </div>

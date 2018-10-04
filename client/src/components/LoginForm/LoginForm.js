@@ -103,7 +103,7 @@ class LoginForm extends Component {
                             <div className="row margin">
                                 <div className="input-field col s12">
                                     <i className="material-icons prefix pt-5">person_outline</i>
-                                    <input id="email" type="text" value={email}
+                                    <input className="loginInput" className="loginInput" id="email" type="text" value={email}
                                         onChange={event => this.setState(byPropKey('email', event.target.value))} />
                                     <label htmlFor="email" className="center-align">Email</label>
                                 </div>
@@ -111,15 +111,15 @@ class LoginForm extends Component {
                             <div className="row margin">
                                 <div className="input-field col s12">
                                     <i className="material-icons prefix pt-5">lock_outline</i>
-                                    <input id="password" type="password" value={password}
+                                    <input className="loginInput" id="password" type="password" value={password}
                                         onChange={event => this.setState(byPropKey('password', event.target.value))} />
                                     <label htmlFor="password">Password</label>
                                 </div>
                             </div>
                             <div className="row">
                                 <div className="row margin col s12 rememberMe">
-                                    <label>
-                                        <input type="checkbox" />
+                                    <label className="loginLabel" >
+                                        <input className="loginInput" type="checkbox" />
                                         <span >Remember Me</span>
                                     </label>
                                 </div>
