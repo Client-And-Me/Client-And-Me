@@ -5,7 +5,7 @@ export default {
         return axios.get("/api/appointments")
     },
     saveAppointment: function (appointmentData) {
-        return axios.post("");
+        return axios.post("http://localhost:3001/api/appointments", appointmentData);
     },
     createProvider: function (providerData) {
         return axios.post("/api/provider", providerData);

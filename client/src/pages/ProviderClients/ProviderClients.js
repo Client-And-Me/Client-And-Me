@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import "./ProviderClients.css";
 import { Row, Section } from "react-materialize";
+import ProviderClientsCollapsibleMain from "../../components/ProviderClientsCollapsibleMain";
 
 
 class ProviderClients extends Component {
@@ -12,7 +13,7 @@ class ProviderClients extends Component {
             <div>
                 <Section className="customContainer">
                     <Row>
-                        <h1>Hello World</h1>
+                        <ProviderClientsCollapsibleMain />
                     </Row>
 
                 </Section>

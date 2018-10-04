@@ -1,16 +1,42 @@
 import React, { Component } from "react";
 import moment from "moment";
 import "./apptModalButton.css";
+import { auth } from "../../firebase";
 // import datePicker from "../DatePicker/datePicker";
 import { Modal, Button, Row, Input } from "react-materialize";
+import API from "../../utils/API";
 
 class ApptModalButton extends Component {
     //const ApptModalButton = () => {
 
     state = {
-        recipes: [],
-        recipeSearch: ""
+
     };
+    saveApptToDatabase(body) {
+        console.log(body)
+        API.saveAppointment(body)
+            .then(function (response) {
+                console.log(response)
+            })
+    };
+    createAppt = event => {
+
+        let param = {
+            title: this.state.client_name,
+            allDay: false,
+            start: this.state.date,
+            end: this.state.date,
+            url: "",
+            color: "blue",
+            client_id: this.state.client_name,
+            firebase_id: "",
+        };
+        this.saveApptToDatabase(param);
+        event.preventDefault();
+    };
+
+
+
 
     handleInputChange = event => {
         // Destructure the name and value properties off of event.target
@@ -24,12 +50,12 @@ class ApptModalButton extends Component {
         return (
 
             <Modal
-                fixedFooter
+           
                 trigger={<Button className="btn-floating btn-large right z-depth-5 #648c9f" id="addApptBtn">
                     <i className="material-icons">add</i>
                 </Button>}
                 actions={[
-                    <Button className="waves-effect waves-light btn modal-action modal-close" id="modal-btn">Create<i className="material-icons right">send</i></Button>,
+                    <Button className="waves-effect waves-light btn modal-action modal-close" id="modal-btn" onClick={this.createAppt}>Create<i className="material-icons right">send</i></Button>,
                     <Button className="waves-effect red waves-light btn modal-action modal-close left" id="delete-btn">Delete</Button>
                 ]}
             >
@@ -67,7 +93,7 @@ class ApptModalButton extends Component {
 
                     <Input
                         id="start-time"
-                        name='start-time'
+                        name="startTime"
                         // label="Start Time:"
                         placeholder="Start Time:"
                         type='time'
