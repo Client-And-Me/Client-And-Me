@@ -25,8 +25,8 @@ class ApptModalButton extends Component {
         let param = {
             title: this.state.client_name,
             //=allDay: "false",
-            start: this.state.startDate,
-            end: this.state.endDate,
+            start: moment(this.state.startDate).utc(),
+            end: moment(this.state.endDate).utc(),
             url: "",
             color: "red",
             client_id: this.state.client_name,
