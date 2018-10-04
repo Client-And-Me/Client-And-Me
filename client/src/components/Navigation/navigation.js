@@ -6,7 +6,7 @@ import * as routes from '../../constants/routes';
 
 const Navigation = ({ authUser }) =>
     <div>
-        {authUser ? <NavigationAuthProvider /> : <NavigationNonAuth />
+        {authUser.isProvider ? <NavigationAuthProvider /> : authUser.isClient ? <NavigationAuthClient /> : <NavigationNonAuth />
         }
     </div>
 

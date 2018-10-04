@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import "./LoginForm.css";
 import { auth } from '../../firebase';
+import * as routes from "../../constants/routes";
+import API from "../../utils/API";
 
 
 const byPropKey = (propertyName, value) => () => ({
@@ -29,10 +31,34 @@ class LoginForm extends Component {
             password,
         } = this.state;
 
+        const {
+            history
+        } = this.props;
+
         auth.emailSignIn(email, password)
-            .then(() => {
+            .then((authUser) => {
                 this.setState({ ...INITIAL_STATE });
-                // logintype push to route verified with sql
+
+
+                //create methods for below code.
+                API.getIsClient(auth.currentUser().uid)
+                    .then(response => {
+                        if (response.data)
+                            history.push(routes.CLIENTHOME);
+                        else {
+                            API.getIsProvider(auth.currentUser().uid)
+                                .then(response => {
+                                    history.push(routes.PROVIDERHOME);
+                                })
+                                .catch(error => {
+
+                                });
+                        }
+                    })
+                    .catch(error => {
+
+                    });
+
             })
             .catch(error => {
                 this.setState(byPropKey('error', error));
@@ -100,7 +126,8 @@ class LoginForm extends Component {
                             </div>
                             <div className="row">
                                 <div className="input-field col s12">
-                                    <a href="" className="btn waves-effect waves-light col s12" disabled={isInvalid} type="submit">Login</a>
+                                    <button className="btn waves-effect waves-light col s12" disabled={isInvalid} type="submit">Login</button>
+                                    <a className="btn waves-effect waves-light col s12" disabled={isInvalid} type="submit">Login</a>
                                 </div>
                             </div>
                             <div className="row">

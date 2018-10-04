@@ -11,6 +11,7 @@ import Footer from "./components/Footer";
 import ForgotPassword from "./pages/ForgotPassword";
 import Navigation from "./components/Navigation";
 import { firebase } from './firebase';
+import API from "./utils/API";
 
 import * as routes from "./constants/routes";
 
@@ -19,7 +20,12 @@ class App extends Component {
     super(props);
 
     this.state = {
-      authUser: null,
+      authUser: {
+        authUser: null,
+        isClient: false,
+        isProvider: false
+      },
+
     };
   }
   render() {
@@ -44,13 +50,47 @@ class App extends Component {
 
   componentDidMount() {
     firebase.auth.onAuthStateChanged(authUser => {
-      if (authUser.uid) {
+      if (authUser) {
         console.log("Success");
-        this.setState({ authUser });
+
+
+        let user = {
+          authUser: authUser,
+          isClient: false,
+          isProvider: false,
+        }
+
+        API.getIsClient(authUser.uid)
+          .then(response => {
+
+            user.isClient = response.data;
+
+            if (!user.isClient) {
+
+              API.getIsProvider(authUser.uid)
+                .then(response => {
+                  user.isProvider = response.data;
+                  this.setState({ authUser: user });
+                })
+                .catch(error => {
+                  this.setState({ authUser: user });
+                });
+            }
+            this.setState({ authUser: user });
+          })
+          .catch(error => {
+            this.setState({ authUser: user });
+          });
       }
       else {
         console.log("Fail");
-        this.setState({ authUser: null });
+        this.setState({
+          authUser: {
+            authUser: null,
+            isClient: false,
+            isProvider: false
+          }
+        });
       }
     });
   }

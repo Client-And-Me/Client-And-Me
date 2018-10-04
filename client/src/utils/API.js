@@ -12,6 +12,12 @@ export default {
     },
     createClient: function (clientData) {
         return axios.post("/api/client", clientData);
+    },
+    getIsProvider: function (id) {
+        return axios.get("/api/provider/" + id);
+    },
+    getIsClient: function (id) {
+        return axios.get("/api/client/" + id);
     }
 }
 
