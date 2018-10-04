@@ -1,13 +1,11 @@
 import React from 'react';
 
 import { auth } from '../../firebase';
+import * as routes from '../../constants/routes';
 
 const SignOutButton = () =>
-    <button
-        type="button"
-        onClick={auth.doSignOut}
-    >
-        Sign Out
-  </button>
+
+    <a href={routes.HOME} onClick={auth.doSignOut}>Log Out</a>
+
 
 export default SignOutButton;

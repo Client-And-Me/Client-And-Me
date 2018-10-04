@@ -3,11 +3,15 @@ import API from "../../utils/API";
 import { auth } from "../../firebase";
 import { Input } from "react-materialize";
 import "./RegisterForm.css";
+import * as routes from "../../constants/routes";
+
+
 
 const INITIAL_STATE = {
     firstName: '',
     lastName: '',
     brandName: '',
+    userName: '',
     email: '',
     passwordOne: '',
     passwordTwo: '',
@@ -33,6 +37,7 @@ class RegisterForm extends Component {
             firstName,
             lastName,
             brandName,
+            userName,
             email,
             passwordOne,
         } = this.state;
@@ -45,12 +50,14 @@ class RegisterForm extends Component {
                     first_name: firstName,
                     last_name: lastName,
                     brand_name: brandName,
+                    user_id: userName,
                     email: email,
-                    firbase_id: authUser.user.uid
+                    firbase_id: auth.currentUser().uid
                 };
                 console.log(param);
+
                 this.saveUserToDatabase(param);
-                this.emailSignIn(email, passwordOne);
+
 
             })
             .catch(error => {
@@ -62,11 +69,17 @@ class RegisterForm extends Component {
     }
 
     saveUserToDatabase(body) {
+
+        const {
+            history
+        } = this.props;
+
         console.log(this.state.userType);
         if (this.state.userType === "provider") {
             API.createProvider(body)
                 .then(function (response) {
                     console.log(response);
+                    history.push(routes.PROVIDERHOME);
                 })
                 .catch(function (error) {
                     console.log(error);
@@ -74,7 +87,16 @@ class RegisterForm extends Component {
                 });
         }
 
-        //else create user
+        else if (this.state.userType === "client") {
+            API.createClient(body)
+                .then(function (response) {
+                    console.log(response);
+                    history.push(routes.CLIENTHOME);
+                })
+                .catch(function (error) {
+                    console.log(error);
+                });
+        }
     }
 
     handleInputChange = event => {
@@ -92,6 +114,7 @@ class RegisterForm extends Component {
             firstName,
             lastName,
             brandName,
+            userName,
             email,
             passwordOne,
             passwordTwo,
@@ -103,8 +126,7 @@ class RegisterForm extends Component {
             passwordOne === '' ||
             email === '' ||
             firstName === '' ||
-            lastName === '' ||
-            brandName === '';
+            lastName === '';
 
         return (
             <div>
@@ -119,7 +141,7 @@ class RegisterForm extends Component {
                                 s={12}
                                 type='select'>
 
-                                <option value="" disabled selected>Sign up as Client or Provider</option>
+                                <option value="" disabled selected value>Sign up as Client or Provider</option>
                                 <option value="client">Client</option>
                                 <option value="provider">Provider</option>
                             </Input>
@@ -137,11 +159,17 @@ class RegisterForm extends Component {
                                 type="text"
                                 placeholder="Last Name" />
 
-                            <input
-                                value={brandName}
-                                onChange={event => this.setState(byPropKey('brandName', event.target.value))}
+                            {this.state.userType === "provider" ? (
+                                <input
+                                    value={brandName}
+                                    onChange={event => this.setState(byPropKey('brandName', event.target.value))}
+                                    type="text"
+                                    placeholder="Brand Name" />
+                            ) : (<input
+                                value={userName}
+                                onChange={event => this.setState(byPropKey('userName', event.target.value))}
                                 type="text"
-                                placeholder="Brand Name" />
+                                placeholder="User Name" />)}
 
                             <input
                                 value={email}
