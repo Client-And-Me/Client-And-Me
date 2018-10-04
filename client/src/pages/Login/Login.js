@@ -13,8 +13,7 @@ class Login extends Component {
   render() {
     return (
       <div>
-        <NavbarHome />
-          <LoginForm />
+        <LoginForm />
       </div>
     );
   }

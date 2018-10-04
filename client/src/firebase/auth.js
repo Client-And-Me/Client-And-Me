@@ -19,3 +19,7 @@ export const passwordReset = (email) =>
 // Password Change
 export const passwordUpdate = (password) =>
     auth.currentUser.updatePassword(password);
+
+// Current User
+export const currentUser = () =>
+    auth.currentUser;

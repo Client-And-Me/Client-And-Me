@@ -10,11 +10,10 @@ class Home extends Component {
   render() {
     return (
       <div>
-        <NavbarHome />
-      <Section>
-        
-        <Prices></Prices>
-      </Section>
+        <Section>
+
+          <Prices></Prices>
+        </Section>
       </div>
 
     )

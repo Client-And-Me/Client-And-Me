@@ -3,7 +3,6 @@ import FullCalendar from "../../components/FullCalendar";
 // import { Link } from "react-router-dom";
 import "./ProviderHome.css"
 import { CardTitle, Card, Col, Row, Section, Input } from "react-materialize";
-import NavbarProvider from "../../components/Navbar/NavbarProvider";
 import AppointmentsTable from "../../components/AppointmentsTable"
 
 
@@ -16,7 +15,6 @@ class ProviderHome extends Component {
     render() {
         return (
             <div>
-                <NavbarProvider />
                 <Section className="customContainer">
                     <Row>
                         <Col s={12} m={3} l={3} offset="l1 m1 s0">

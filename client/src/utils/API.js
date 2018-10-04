@@ -8,8 +8,10 @@ export default {
         return axios.post("");
     },
     createProvider: function (providerData) {
-        console.log("api here");
         return axios.post("/api/provider", providerData);
+    },
+    createClient: function (clientData) {
+        return axios.post("/api/client", clientData);
     }
 }
 

@@ -7,8 +7,7 @@ class ForgotPassword extends Component {
     render() {
         return (
             <div>
-                <NavbarHome />
-            <ForgotPasswordForm />
+                <ForgotPasswordForm />
             </div>
         );
     }

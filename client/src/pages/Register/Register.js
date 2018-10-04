@@ -1,19 +1,14 @@
 import React, { Component } from "react";
 import { RegisterForm } from "../../components/RegisterForm/RegisterForm";
+import { withRouter } from "react-router-dom";
 // import "./SignUp.css";
 import NavbarHome from "../../components/Navbar/NavbarHome";
 
-class Register extends Component {
+const Register = ({ history }) =>
 
-    render() {
-        return (
-            <div>
-                <NavbarHome />
-                <RegisterForm />
-            </div>
-        );
-    }
-}
+    <div>
+        <RegisterForm history={history} />
+    </div>
 
-export default Register;
+export default withRouter(Register);
 
