@@ -22,7 +22,8 @@ class App extends Component {
     this.state = {
       user: null,
       isClient: false,
-      isProvider: false
+      isProvider: false,
+      isLoading: true,
     };
   }
 
@@ -53,6 +54,7 @@ class App extends Component {
                   console.log(response)
                   if (response.data) {
                     this.setState({ isProvider: true })
+                    this.setState({ isLoading: false })
                     console.log(this.state)
                   }
                   // user.isProvider = true;
@@ -65,11 +67,13 @@ class App extends Component {
                 });
             } else {
               this.setState({ isClient: true })
+              this.setState({ isLoading: false })
             }
             // this.setState({ authUser: user });
           })
           .catch(error => {
             console.log(error);
+            this.setState({ isLoading: false })
           });
       }
       else {
@@ -77,7 +81,8 @@ class App extends Component {
         this.setState({
           user: null,
           isClient: false,
-          isProvider: false
+          isProvider: false,
+          isLoading: true,
         });
       }
     });
@@ -86,6 +91,7 @@ class App extends Component {
   render() {
     return (
       <Router>
+
         <div>
           <Navigation provider={this.state.isProvider} client={this.state.isClient} />
           <Route exact path={routes.HOME} component={Home} />
@@ -96,13 +102,13 @@ class App extends Component {
           <Route exact path={routes.PROVIDERCLIENTS} component={ProviderClients} />
           <Route exact path={routes.PROVIDERAPPOINTMENTS} component={ProviderAppointments} />
           <Route exact path={routes.FORGOTPASSWORD} component={ForgotPassword} />
-
           <Footer />
         </div>
       </Router>
     );
   }
 }
+
 
 
 export default App;
