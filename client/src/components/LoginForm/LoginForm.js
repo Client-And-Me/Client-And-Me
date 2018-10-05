@@ -31,33 +31,14 @@ class LoginForm extends Component {
             password,
         } = this.state;
 
-        const {
-            history
-        } = this.props;
 
         auth.emailSignIn(email, password)
             .then((authUser) => {
                 this.setState({ ...INITIAL_STATE });
 
 
-                //create methods for below code.
-                API.getIsClient(auth.currentUser().uid)
-                    .then(response => {
-                        if (response.data)
-                            history.push(routes.CLIENTHOME);
-                        else {
-                            API.getIsProvider(auth.currentUser().uid)
-                                .then(response => {
-                                    history.push(routes.PROVIDERHOME);
-                                })
-                                .catch(error => {
+                this.getSignedInUser();
 
-                                });
-                        }
-                    })
-                    .catch(error => {
-
-                    });
 
             })
             .catch(error => {
@@ -66,6 +47,31 @@ class LoginForm extends Component {
 
         event.preventDefault();
     }
+
+    getSignedInUser = () => {
+
+        const {
+            history
+        } = this.props;
+
+        API.getIsClient(auth.currentUser().uid)
+            .then(response => {
+                if (response.data)
+                    history.push(routes.CLIENTHOME);
+                else {
+                    API.getIsProvider(auth.currentUser().uid)
+                        .then(response => {
+                            history.push(routes.PROVIDERHOME);
+                        })
+                        .catch(error => {
+
+                        });
+                }
+            })
+            .catch(error => {
+
+            });
+    };
 
     render() {
         const {

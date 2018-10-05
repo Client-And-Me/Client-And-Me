@@ -1,4 +1,4 @@
-import React, { Component } from "react";
+import React from "react";
 import "./Login.css";
 import { LoginForm } from "../../components/LoginForm/LoginForm";
 import { withRouter } from "react-router-dom";
