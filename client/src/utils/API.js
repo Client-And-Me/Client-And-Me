@@ -17,7 +17,7 @@ export default {
         return axios.get("/api/provider/" + id);
     },
     getProviderInfo: function (id) {
-        return axios.get("api/provider/" + id);
+        return axios.get("api/provider/info/" + id);
     },
     getIsClient: function (id) {
         return axios.get("/api/client/" + id);
