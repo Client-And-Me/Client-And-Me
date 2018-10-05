@@ -2,27 +2,53 @@ import React, { Component } from "react";
 import Calendar from "../../components/FullCalendar";
 // import { Link } from "react-router-dom";
 import { firebase } from '../../firebase';
+import API from "../../utils/API";
 import "./ProviderHome.css"
 import { CardTitle, Card, CardPanel, Col, Row, Section } from "react-materialize";
 import AppointmentsTable from "../../components/AppointmentsTable"
 
 
 class ProviderHome extends Component {
+
     state = {
+        user: null,
         isLoading: true,
+        providerInfo: null,
+    };
+
+    getProviderInfo = () => {
+        console.log("getting provider info");
+        API.getProviderInfo(
+            this.state.user
+        ).then(res =>
+            this.setState({
+                providerInfo: res.data,
+            }),
+        ).catch(err => console.log(err));
+
+        console.log("got info");
+
     };
 
     componentDidMount() {
+        
         firebase.auth.onAuthStateChanged(firebaseUser => {
             this.setState({
                 user: firebaseUser,
                 isLoading: false
             })
-        })
-    }
 
+        })
+
+        this.getProviderInfo();
+    }
+F
     render() {
         if (!this.state.isLoading) {
+
+            console.log(this.state.user);
+            console.log(this.state.providerInfo);
+
             return (
                 <div>
                     <Section className="customContainer">
