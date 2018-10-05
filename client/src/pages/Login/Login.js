@@ -1,24 +1,17 @@
-import React, { Component } from "react";
+import React from "react";
 import "./Login.css";
 import { LoginForm } from "../../components/LoginForm/LoginForm";
+import { withRouter } from "react-router-dom";
 
 
 
 
+const Login = ({ history }) =>
 
-class Login extends Component {
+  <div>
+    <LoginForm history={history} />
+  </div>
 
-  ///login logic here
-
-  render() {
-    return (
-      <div>
-        <LoginForm />
-      </div>
-    );
-  }
-}
-
-export default Login;
+export default withRouter(Login);
 
 

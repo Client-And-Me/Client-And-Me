@@ -52,7 +52,7 @@ class RegisterForm extends Component {
                     brand_name: brandName,
                     user_id: userName,
                     email: email,
-                    firbase_id: auth.currentUser().uid
+                    firebase_id: auth.currentUser().uid
                 };
                 console.log(param);
 

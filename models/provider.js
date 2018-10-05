@@ -3,7 +3,7 @@ module.exports = function (sequelize, DataTypes) {
         first_name: DataTypes.STRING,
         last_name: DataTypes.STRING,
         brand_name: DataTypes.STRING,
-        firbase_id: DataTypes.STRING,
+        firebase_id: DataTypes.STRING,
         phone: DataTypes.STRING,
         email: DataTypes.STRING,
         address1: DataTypes.STRING,

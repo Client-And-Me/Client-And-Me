@@ -1,4 +1,4 @@
-import React, { Component } from "react";
+import React from "react";
 import { RegisterForm } from "../../components/RegisterForm/RegisterForm";
 import { withRouter } from "react-router-dom";
 // import "./SignUp.css";

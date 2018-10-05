@@ -9,7 +9,7 @@ router.route("/")
 
 // Matches with "/api/provider/:id"
 router.route("/:id")
-// .get(providerController.findById)
+    .get(providerController.isProvider);
 // .put(providerController.update)
 // .delete(providerController.remove);
 
