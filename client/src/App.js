@@ -66,7 +66,7 @@ class App extends Component {
             user.isClient = response.data;
 
             if (!user.isClient) {
-
+              
               API.getIsProvider(authUser.uid)
                 .then(response => {
                   user.isProvider = response.data;

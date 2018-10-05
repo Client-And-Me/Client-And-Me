@@ -1,14 +1,31 @@
-import React from 'react';
+import React, { Component } from 'react';
 
 import SignOutButton from '../SignOutButton';
 import * as routes from '../../constants/routes';
 
 
-const Navigation = ({ authUser }) =>
-    <div>
-        {authUser.isProvider ? <NavigationAuthProvider /> : authUser.isClient ? <NavigationAuthClient /> : <NavigationNonAuth />
-        }
-    </div>
+class Navigation extends Component {
+
+    
+render() {
+
+    let nav;
+
+    if (this.props.authUser.isProvider) {
+        nav = <NavigationAuthProvider />
+    } else if (this.props.authUser.isClient) {
+        nav = <NavigationAuthClient />
+    } else {
+        nav = <NavigationNonAuth />
+    }
+    return (
+        <div>
+            {nav}
+        </div>
+
+    );
+}
+};
 
 const NavigationAuthClient = () =>
     <nav>
