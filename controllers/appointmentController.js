@@ -7,7 +7,7 @@ module.exports = {
     findAll: function (req, res) {
         db.appointment
             .findAll(
-                //{ where: { firebase_id: req.param } }
+                { where: { firebase_id: req.param } }
             )
             .then(dbAppointment => res.json(dbAppointment))
             .catch(err => res.status(422).json(err));

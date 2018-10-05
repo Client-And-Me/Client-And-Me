@@ -11,7 +11,7 @@ class ApptModalButton extends Component {
     //const ApptModalButton = () => {
 
     state = {
-        //firebase_id: auth.currentUser()
+        firebase_id: auth.currentUser()
     };
     saveApptToDatabase(body) {
         console.log(body)

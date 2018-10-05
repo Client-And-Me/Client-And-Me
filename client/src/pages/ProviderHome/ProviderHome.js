@@ -1,8 +1,9 @@
 import React, { Component } from "react";
-import FullCalendar from "../../components/FullCalendar";
+import Calendar from "../../components/FullCalendar";
 // import { Link } from "react-router-dom";
+import { firebase } from '../../firebase';
 import "./ProviderHome.css"
-import { CardTitle, Card, CardPanel, Col, Row, Section, Input } from "react-materialize";
+import { CardTitle, Card, CardPanel, Col, Row, Section } from "react-materialize";
 import AppointmentsTable from "../../components/AppointmentsTable"
 
 
@@ -11,6 +12,9 @@ import AppointmentsTable from "../../components/AppointmentsTable"
 class ProviderHome extends Component {
     state = {
     };
+    componentWillMount() {
+        firebase.auth.onAuthStateChanged(firebaseUser => { this.setState({ user: firebaseUser }) })
+    }
 
     render() {
         return (
@@ -31,17 +35,10 @@ class ProviderHome extends Component {
                     <Row>
                         <Col s={12} m={10} l={10} offset="l1 m1 s0">
                             <CardPanel>
-                                <FullCalendar />
+                                <Calendar user={this.state.user}></Calendar>
                             </CardPanel>
                         </Col>
                     </Row>
-                    {/* <Row>
-                        <Col s={12} m={10} l={10}>
-                            <Row>
-                                <Input name='on' type='date' onChange={function (e, value) { }} />
-                            </Row>
-                        </Col>
-                    </Row> */}
                 </Section>
             </div>
         );

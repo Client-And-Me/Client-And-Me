@@ -2,7 +2,7 @@ import axios from "axios";
 
 export default {
     getAppts: function (params) {
-        return axios.get("/api/appointments")
+        return axios.get("/api/appointments", params)
     },
     saveAppointment: function (appointmentData) {
         return axios.post("/api/appointments", appointmentData);
