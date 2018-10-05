@@ -133,7 +133,6 @@ class LoginForm extends Component {
                             <div className="row">
                                 <div className="input-field col s12">
                                     <button className="btn waves-effect waves-light col s12" disabled={isInvalid} type="submit">Login</button>
-                                    <a className="btn waves-effect waves-light col s12" disabled={isInvalid} type="submit">Login</a>
                                 </div>
                             </div>
                             <div className="row">

@@ -80,6 +80,7 @@ class RegisterForm extends Component {
                 .then(function (response) {
                     console.log(response);
                     history.push(routes.PROVIDERHOME);
+                    window.location.reload();
                 })
                 .catch(function (error) {
                     console.log(error);
@@ -87,11 +88,12 @@ class RegisterForm extends Component {
                 });
         }
 
-        else if (this.state.userType === "client") {
+        else {
             API.createClient(body)
                 .then(function (response) {
                     console.log(response);
                     history.push(routes.CLIENTHOME);
+                    window.location.reload();
                 })
                 .catch(function (error) {
                     console.log(error);
