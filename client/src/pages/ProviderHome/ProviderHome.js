@@ -7,8 +7,6 @@ import { CardTitle, Card, CardPanel, Col, Row, Section } from "react-materialize
 import AppointmentsTable from "../../components/AppointmentsTable"
 
 
-
-
 class ProviderHome extends Component {
     state = {
     };

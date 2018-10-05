@@ -18,6 +18,17 @@ module.exports = {
                     res.json(false)
             })
             .catch(err => res.status(422).json(err));
+    },
+
+    providerInfo: function (req, res) {
+        db.provider.findAll({ where: { firebase_id: req.params.id } })
+            .then(dbModel => {
+                if (dbModel.length > 0)
+                    res.json(dbModel);
+                else
+                    res.json(false)
+            })
+            .catch(err => res.status(422).json(err));
     }
 
 }
