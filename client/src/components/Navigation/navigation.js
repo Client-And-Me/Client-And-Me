@@ -6,25 +6,25 @@ import * as routes from '../../constants/routes';
 
 class Navigation extends Component {
 
-    
-render() {
 
-    let nav;
+    render() {
 
-    if (this.props.authUser.isProvider) {
-        nav = <NavigationAuthProvider />
-    } else if (this.props.authUser.isClient) {
-        nav = <NavigationAuthClient />
-    } else {
-        nav = <NavigationNonAuth />
+        let nav;
+
+        if (this.props.provider) {
+            nav = <NavigationAuthProvider />
+        } else if (this.props.client) {
+            nav = <NavigationAuthClient />
+        } else {
+            nav = <NavigationNonAuth />
+        }
+        return (
+            <div>
+                {nav}
+            </div>
+
+        );
     }
-    return (
-        <div>
-            {nav}
-        </div>
-
-    );
-}
 };
 
 const NavigationAuthClient = () =>

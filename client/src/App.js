@@ -20,19 +20,74 @@ class App extends Component {
     super(props);
 
     this.state = {
-      authUser: {
-        authUser: null,
-        isClient: false,
-        isProvider: false
-      },
-
+      user: null,
+      isClient: false,
+      isProvider: false
     };
   }
+
+  componentDidMount() {
+    firebase.auth.onAuthStateChanged(firebaseUser => {
+      if (firebaseUser) {
+        console.log("Success");
+        this.setState({ user: firebaseUser })
+        console.log(this.state.user)
+        // let user = {
+        //   authUser: firebaseUser,
+        //   isClient: false,
+        //   isProvider: false,
+        // }
+
+        API.getIsClient(firebaseUser.uid)
+          .then(response => {
+            console.log(response.data)
+
+            // user.isClient = true;
+            // console.log(this.state.authUser)
+            // console.log(response)
+
+            if (!response.data) {
+
+              API.getIsProvider(firebaseUser.uid)
+                .then(response => {
+                  console.log(response)
+                  if (response.data) {
+                    this.setState({ isProvider: true })
+                    console.log(this.state)
+                  }
+                  // user.isProvider = true;
+                  // this.setState({ authUser: user });
+                  // console.log(this.state.authUser)
+                })
+                .catch(error => {
+                  // this.setState({ authUser: user });
+                  console.log(error)
+                });
+            } else {
+              this.setState({ isClient: true })
+            }
+            // this.setState({ authUser: user });
+          })
+          .catch(error => {
+            console.log(error);
+          });
+      }
+      else {
+        console.log("Fail");
+        this.setState({
+          user: null,
+          isClient: false,
+          isProvider: false
+        });
+      }
+    });
+  }
+
   render() {
     return (
       <Router>
         <div>
-          <Navigation authUser={this.state.authUser} />
+          <Navigation provider={this.state.isProvider} client={this.state.isClient} />
           <Route exact path={routes.HOME} component={Home} />
           <Route exact path={routes.LOGIN} component={Login} />
           <Route exact path={routes.REGISTER} component={Register} />
@@ -47,54 +102,8 @@ class App extends Component {
       </Router>
     );
   }
-
-  componentDidMount() {
-    firebase.auth.onAuthStateChanged(authUser => {
-      if (authUser) {
-        console.log("Success");
-
-
-        let user = {
-          authUser: authUser,
-          isClient: false,
-          isProvider: false,
-        }
-
-        API.getIsClient(authUser.uid)
-          .then(response => {
-
-            user.isClient = response.data;
-
-            if (!user.isClient) {
-              
-              API.getIsProvider(authUser.uid)
-                .then(response => {
-                  user.isProvider = response.data;
-                  this.setState({ authUser: user });
-                })
-                .catch(error => {
-                  this.setState({ authUser: user });
-                });
-            }
-            this.setState({ authUser: user });
-          })
-          .catch(error => {
-            this.setState({ authUser: user });
-          });
-      }
-      else {
-        console.log("Fail");
-        this.setState({
-          authUser: {
-            authUser: null,
-            isClient: false,
-            isProvider: false
-          }
-        });
-      }
-    });
-  }
 }
+
 
 export default App;
 
