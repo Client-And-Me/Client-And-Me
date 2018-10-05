@@ -1,6 +1,7 @@
 import React from "react";
 import moment from "moment"
 import API from "../../utils/API";
+import { firebase } from '../../firebase';
 
 
 import FullCalendar from "fullcalendar-reactwrapper";
@@ -25,22 +26,26 @@ class Calendar extends React.Component {
     };
 
     getAppointments = () => {
+        console.log("getting appts");
+        console.log(this.props.user.uid)
         API.getAppts(
-            //this.props.user.uid
+            this.props.user.uid
         ).then(res =>
             this.setState({
                 events: res.data,
             }),
         ).catch(err => console.log(err));
-        console.log("getting appts");
+
         console.log(this.props.user);
+        console.log("got appts");
+
         //console.log(auth.currentUser().uid)
     };
     componentDidMount() {
         console.log("FullCalendar mount started");
+        //console.log(this.props.firebaseUser);
+        console.log(this.state)
         this.getAppointments()
-        console.log(this.props.firebaseUser);
-        //console.log(this.state.events)
         console.log("FullCalendar mount end");
     }
 
@@ -49,11 +54,13 @@ class Calendar extends React.Component {
         this.state = {
             events: [],
             date: moment(),
-            user: this.props.user
+            user: this.props.user,
+            isLoading: true
         }
     }
 
     render() {
+
         return (
             <div id="calendar-component">
                 <FullCalendar
@@ -94,6 +101,7 @@ class Calendar extends React.Component {
             </div>
         );
     }
+
 }
 
 export default Calendar;
