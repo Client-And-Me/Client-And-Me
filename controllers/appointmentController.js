@@ -4,12 +4,10 @@ const db = require("../models");
 
 module.exports = {
 
-    findAll: function (req, res) {
+    findById: function (req, res) {
         db.appointment
-            .findAll(
-                //{ where: { firebase_id: req.param } }
-            )
-            .then(dbAppointment => res.json(dbAppointment))
+            .findAll({ where: { firebase_id: req.params.id } })
+            .then(dbModel => res.json(dbModel))
             .catch(err => res.status(422).json(err));
     },
     create: function (req, res) {
