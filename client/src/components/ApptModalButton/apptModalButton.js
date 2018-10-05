@@ -28,7 +28,7 @@ class ApptModalButton extends Component {
             start: moment(this.state.startDate).utc(),
             end: moment(this.state.endDate).utc(),
             url: "",
-            color: "red",
+            color: "blue",
             client_id: this.state.client_name,
             firebase_id: auth.currentUser().uid,
         };

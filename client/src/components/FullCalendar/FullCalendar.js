@@ -65,9 +65,11 @@ class Calendar extends React.Component {
                         center: "title",
                         right: "month,agendaWeek,agendaDay,listWeek"
                     }}
+                    defaultView="agendaWeek"
                     defaultDate={this.state.date}
                     navLinks={true} // can click day/week names to navigate views
                     editable={true}
+                    timezone="local"
                     selectable={true}
                     eventLimit={true} // allow "more" link when too many events
                     events={this.state.events}
