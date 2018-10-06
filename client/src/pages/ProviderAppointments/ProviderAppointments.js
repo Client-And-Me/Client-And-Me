@@ -1,21 +1,34 @@
 import React, { Component } from "react";
-import FullCalendar from "../../components/FullCalendar";
+import AppointmentsTable from "../../components/AppointmentsTable";
+import moment from "moment"
+import API from "../../utils/API";
 // import { Link } from "react-router-dom";
 import { firebase } from '../../firebase';
 import "./ProviderAppointments.css";
 import { Card, Col, Row, Section } from "react-materialize";
 
-
+const date = moment()
 
 class ProviderAppointments extends Component {
-
-    componentDidMount() {
-        firebase.auth.onAuthStateChanged(firebaseUser => {
+    getApptTable = () => {
+        console.log("getting appts");
+        // console.log(this.props.user.uid)
+        API.getApptsTable(localStorage.getItem("fid"), date).then(res =>
             this.setState({
-                user: firebaseUser,
-                isLoading: false
-            })
-        })
+                events: res.data,
+                isLoading: false,
+            }),
+        ).catch(err => console.log(err));
+
+        console.log(this.props.user);
+        console.log("got appts");
+
+        //console.log(auth.currentUser().uid)
+    };
+    componentDidMount() {
+        console.log("mounting");
+        this.getApptTable();
+        console.log("mounted")
     }
     state = {
         isLoading: true,
@@ -28,9 +41,9 @@ class ProviderAppointments extends Component {
                     <Section className="customContainer">
                         <Row>
                             <Col s={12} m={5} l={5} offset="l1 m1 s0">
-                                <div className="card-panel">
-                                    <FullCalendar user={this.state.user} className="calendar" />
-                                </div>
+
+                                <AppointmentsTable events={this.state.events} />
+
                             </Col>
                             <Col s={12} m={2} l={5}>
                                 <Card className="appointmentDetails"
@@ -44,7 +57,7 @@ class ProviderAppointments extends Component {
                     </Section>
                 </div>
             );
-        }
+        } else { return (<h1>Loading</h1>) }
     }
 }
 

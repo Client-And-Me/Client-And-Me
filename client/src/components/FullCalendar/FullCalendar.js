@@ -27,7 +27,7 @@ class Calendar extends React.Component {
 
     getAppointments = () => {
         console.log("getting appts");
-        console.log(this.props.user.uid)
+        // console.log(this.props.user.uid)
         API.getAppts(this.props.user.uid).then(res =>
             this.setState({
                 events: res.data,
