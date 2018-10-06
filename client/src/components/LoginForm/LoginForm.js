@@ -98,20 +98,10 @@ class LoginForm extends Component {
                             </div>
                             <div className="row margin">
                                 <div className="input-field col s12">
-                                    <select value={loginType}
-                                        onChange={event => this.setState(byPropKey('loginType', event.target.value))}>
-                                        <option value="" disabled selected>Client or Provider</option>
-                                        <option value="client">Client</option>
-                                        <option value="provider">Provider</option>
-                                    </select>
-                                </div>
-                            </div>
-                            <div className="row margin">
-                                <div className="input-field col s12">
                                     <i className="material-icons prefix pt-5">person_outline</i>
                                     <input className="loginInput" className="loginInput" id="email" type="text" value={email}
                                         onChange={event => this.setState(byPropKey('email', event.target.value))} />
-                                    <label htmlFor="email" className="center-align">Email</label>
+                                    <label htmlFor="email" className="center-align" >Email</label>
                                 </div>
                             </div>
                             <div className="row margin">
@@ -122,20 +112,11 @@ class LoginForm extends Component {
                                     <label htmlFor="password">Password</label>
                                 </div>
                             </div>
-                            <div className="row">
-                                <div className="row margin col s12 rememberMe">
-                                    <label className="loginLabel" >
-                                        <input className="loginInput" type="checkbox" />
-                                        <span >Remember Me</span>
-                                    </label>
-                                </div>
-                            </div>
-                            <div className="row">
                                 <div className="input-field col s12">
-                                    <button className="btn waves-effect waves-light col s12" disabled={isInvalid} type="submit">Login</button>
+                                    <button className="btn waves-effect waves-light col s12 loginButton" disabled={isInvalid} type="submit">Login</button>
                                 </div>
                             </div>
-                            <div className="row">
+                            <div className="row margin">
                                 <div className="input-field col s6 m6 l6">
                                     <p className="margin medium-small"><a href="/register" className="registerLink">Register</a></p>
                                 </div>

@@ -12,11 +12,6 @@ row {
     padding-right: 0px !important;
 } */
 
-.rememberMe {
-    padding-top: 10px !important;
-    padding-bottom: 10px !important;
-}
-
 .loginCard {
     margin-top: 5% !important;
     margin-bottom: 5% !important;
@@ -59,12 +54,20 @@ row {
     color: #779aab !important;
 }
 
+.loginButton {
+    margin-top: 30px !important;
+}
+
+.margin {
+    margin-top: 30px !important;
+    margin-bottom: 30px !important;
+}
+
 .brandColor {
     background-color: #779aab !important;
 }
-/* .material-icons {
-    margin-top: 20px;
-} */
-/* .input-field label:not(.label-icon).active {
-    transform: translateY(-20%);
-} */
+
+.input-field label:not(.label-icon).active {
+    visibility: hidden;
+}
+

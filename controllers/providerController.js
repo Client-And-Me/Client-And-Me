@@ -24,6 +24,19 @@ module.exports = {
         db.provider.find({ where: { firebase_id: req.params.id } })
             .then(dbModel => res.json(dbModel))
             .catch(err => res.status(422).json(err));
+    },
+
+
+    providerClientsInfo: function (req, res) {
+
+        db.client.findAll({
+            include: [{
+                model: db.pc_join,
+                where: { provider_id: req.params.id}
+            }],
+            where: {firebase_id: db.pc_join.client_id}
+        }).then(dbModel => res.json(dbModel))
+          .catch(err => res.status(422).json(err));
     }
 
 }
