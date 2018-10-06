@@ -73,7 +73,7 @@ class AppointmentsTable extends Component {
                                     </td>
                                         </tr>
                                     ) : (this.props.events.map((event, index) => (
-                                        <tr>
+                                        <tr name={index}>
                                             <td>
                                                 {event.title}
                                             </td>
