@@ -7,6 +7,7 @@ Client & Me allows you to register as a Provider in order to manage client and a
 # Technologies Used
 
 - React JS
-- Sequelize
 - React-Materialize
+- Sequelize
+- Node JS
 - Express
