@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import AppointmentsTable from "../../components/AppointmentsTable";
 import moment from "moment"
 import API from "../../utils/API";
+import LoadingGif from "../../components/LoadingGif";
 // import { Link } from "react-router-dom";
 import { firebase } from '../../firebase';
 import "./ProviderAppointments.css";
@@ -57,7 +58,10 @@ class ProviderAppointments extends Component {
                     </Section>
                 </div>
             );
-        } else { return (<h1>Loading</h1>) }
+        } else {
+            return (<div>
+                <LoadingGif />
+            </div>) }
     }
 }
 

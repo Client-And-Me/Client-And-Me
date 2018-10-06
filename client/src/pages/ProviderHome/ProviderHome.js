@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import Calendar from "../../components/FullCalendar";
+import LoadingGif from "../../components/LoadingGif";
 // import { Link } from "react-router-dom";
 import moment from "moment";
 import { firebase } from '../../firebase';
@@ -103,7 +104,12 @@ class ProviderHome extends Component {
                 </div>
             );
         } else {
-            return ("Loading")
+            return (
+                <div>
+                    <LoadingGif />
+                </div>
+                
+                )
         }
     }
 }
