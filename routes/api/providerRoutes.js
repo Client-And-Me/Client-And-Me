@@ -16,4 +16,7 @@ router.route("/info/:id")
 // .put(providerController.update)
 // .delete(providerController.remove);
 
+router.route("/clients/:id")
+    .get(providerController.providerClientsInfo)
+
 module.exports = router;

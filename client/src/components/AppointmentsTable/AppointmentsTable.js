@@ -85,10 +85,12 @@ class AppointmentsTable extends Component {
                                             </td>
                                         </tr>
                                     )))}
+
+                                    <ApptModalButton />
                                 </tbody>
 
                             </table>
-                            <ApptModalButton />
+                            
                         </div>
                     </div>
                 </div>
