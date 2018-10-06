@@ -9,7 +9,7 @@ export default () => (
         <Col l={6} m={6} s={12} offset="l3 m3 s0">
           <Card className='center hoverable'>
             <h2>client&me</h2>
-            <h3>An affordable solution to keeping you connected with your passion.</h3>
+            <h3>An affordable solution to keep you connected with your passion.</h3>
           </Card>
         </Col>
       </Row>
