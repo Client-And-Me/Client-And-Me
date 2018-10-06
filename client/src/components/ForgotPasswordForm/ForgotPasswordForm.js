@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-
+import "./ForgotPasswordForm.css"
 import { auth } from '../../firebase';
 
 
@@ -42,19 +42,23 @@ class ForgotPasswordForm extends Component {
         const isInvalid = email === '';
 
         return (
-            <form onSubmit={this.onSubmit}>
-                <input
-                    value={this.state.email}
-                    onChange={event => this.setState(byPropKey('email', event.target.value))}
-                    type="text"
-                    placeholder="Email Address"
-                />
-                <button disabled={isInvalid} type="submit">
-                    Reset My Password
-        </button>
+            <div className="container">
+                <div className="col s12 m4 l4 offset-l4 offset-m4 z-depth-2 hoverable card-panel loginCard">
+                    <form onSubmit={this.onSubmit}>
+                        <input
+                            value={this.state.email}
+                            onChange={event => this.setState(byPropKey('email', event.target.value))}
+                            type="text"
+                            placeholder="Email Address"
+                        />
+                        <button className="formBtn btn waves-effect waves-light col s12" disabled={isInvalid} type="submit">
+                            Reset My Password
+                    </button>
 
-                {error && <p>{error.message}</p>}
-            </form>
+                        {error && <p>{error.message}</p>}
+                    </form>
+                </div>
+            </div>
         );
     }
 }

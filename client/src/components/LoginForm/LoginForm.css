@@ -12,11 +12,6 @@ row {
     padding-right: 0px !important;
 } */
 
-.rememberMe {
-    padding-top: 10px !important;
-    padding-bottom: 10px !important;
-}
-
 .loginCard {
     margin-top: 5% !important;
     margin-bottom: 5% !important;
@@ -62,6 +57,7 @@ row {
 .brandColor {
     background-color: #779aab !important;
 }
+
 /* .material-icons {
     margin-top: 20px;
 } */
