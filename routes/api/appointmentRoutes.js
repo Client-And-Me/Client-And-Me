@@ -12,5 +12,7 @@ router.route("/:id")
     .get(appointmentController.findById)
 // .put(appointmentController.update)
 // .delete(appointmentController.remove);
+router.route("/table/:id/:dte")
+    .get(appointmentController.getApptsTable)
 
 module.exports = router;

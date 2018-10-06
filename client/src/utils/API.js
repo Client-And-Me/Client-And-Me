@@ -21,7 +21,10 @@ export default {
     },
     getIsClient: function (id) {
         return axios.get("/api/client/" + id);
-    }
+    },
+    getApptsTable: function (id, dte) {
+        return axios.get("/api/appointments/table/" + id + "/" + dte)
+    },
 }
 
 

@@ -33,6 +33,7 @@ class App extends Component {
         console.log("Success");
         this.setState({ user: firebaseUser })
         console.log(this.state.user)
+        localStorage.setItem('fid', firebaseUser.uid);
         // let user = {
         //   authUser: firebaseUser,
         //   isClient: false,

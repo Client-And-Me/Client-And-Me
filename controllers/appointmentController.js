@@ -17,6 +17,17 @@ module.exports = {
             .then(dbModel => res.json(dbModel))
             .catch(err => res.status(422).json(err));
     },
+    getApptsTable: function (req, res) {
+        db.appointment
+            .findAll({
+                where: {
+                    firebase_id: req.params.id,
+                    //[start.gte]: req.params.dte
+                }
+            })
+            .then(dbModel => res.json(dbModel))
+            .catch(err => res.status(422).json(err));
+    },
 
 }
 
