@@ -12,11 +12,6 @@ row {
     padding-right: 0px !important;
 } */
 
-.rememberMe {
-    padding-top: 10px !important;
-    padding-bottom: 10px !important;
-}
-
 .loginCard {
     margin-top: 5% !important;
     margin-bottom: 5% !important;
@@ -75,3 +70,4 @@ row {
 .input-field label:not(.label-icon).active {
     visibility: hidden;
 }
+
