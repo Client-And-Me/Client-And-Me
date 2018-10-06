@@ -4,9 +4,9 @@ import moment from "moment"
 import API from "../../utils/API";
 import LoadingGif from "../../components/LoadingGif";
 // import { Link } from "react-router-dom";
-import { firebase } from '../../firebase';
+import { firebase } from "../../firebase";
 import "./ProviderAppointments.css";
-import { Card, Col, Row, Section } from "react-materialize";
+import { Card, Col, Row, Section, CardPanel, Input, Button, Table } from "react-materialize";
 
 const date = moment().format()
 
@@ -49,9 +49,43 @@ class ProviderAppointments extends Component {
                             <Col s={12} m={2} l={5}>
                                 <Card className="appointmentDetails"
                                     title="Appointment Details">
-                                    Appointment details for each appointment that is clicked on will appear here.
-                                    This will have a route that displays the date, time, and information for the appointment.
-                        </Card>
+                                    <Input value="Jess Smith" s={6} />
+                                    <Input value="Cut and Color" s={6} />
+                                    <Input value="10/10/2018 9:30 AM" s={6} />
+                                    <Input value="10/10/2018 10:00 AM" s={6} />
+                                </Card>
+                            </Col>
+                        </Row>
+                        <Row>
+                            <Col s={12} m={12} l={12}>
+                                <CardPanel>
+                                    <Row>
+                                        <Input placeholder="Note" s={6} label="Note" />
+                                        <Button waves="light">Submit</Button>
+                                    </Row>
+                                    <Row>
+                                        <Table>
+                                            <thead>
+                                                <tr>
+                                                    <th data-field="Note">Note</th>
+
+                                                    <th data-field="TimeStamp">TimeStamp</th>
+                                                </tr>
+                                            </thead>
+
+                                            <tbody>
+                                                <tr>
+                                                    <td>Use N45 color</td>
+                                                    <td>10/8/2018 2:34 PM</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>Likes The Mom Cut</td>
+                                                    <td>10/8/2018 2:38 PM</td>
+                                                </tr>
+                                            </tbody>
+                                        </Table>
+                                    </Row>
+                                </CardPanel>
                             </Col>
                         </Row>
 
