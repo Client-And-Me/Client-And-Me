@@ -7,7 +7,7 @@ import { firebase } from '../../firebase';
 import "./ProviderAppointments.css";
 import { Card, Col, Row, Section } from "react-materialize";
 
-const date = moment()
+const date = moment().format()
 
 class ProviderAppointments extends Component {
     getApptTable = () => {

@@ -1,13 +1,14 @@
 import React, { Component } from "react";
 import Calendar from "../../components/FullCalendar";
 // import { Link } from "react-router-dom";
+import moment from "moment";
 import { firebase } from '../../firebase';
 import API from "../../utils/API";
 import "./ProviderHome.css"
 import { CardTitle, Card, CardPanel, Col, Row, Section } from "react-materialize";
 import AppointmentsTable from "../../components/AppointmentsTable"
 
-
+const date = moment().format()
 class ProviderHome extends Component {
 
     state = {
@@ -34,11 +35,17 @@ class ProviderHome extends Component {
     getAppointments = () => {
         console.log("getting appts");
         // console.log(this.props.user.uid)
-        API.getAppts(this.state.fid).then(res =>
+        // API.getAppts(this.state.fid).then(res =>
+        //     this.setState({
+        //         events: res.data,
+        //     }),
+        // ).catch(err => console.log(err));
+        API.getApptsTable(localStorage.getItem("fid"), date).then(res =>
             this.setState({
                 events: res.data,
             }),
         ).catch(err => console.log(err));
+
 
         console.log(this.props.user);
         console.log("got appts");
@@ -62,7 +69,7 @@ class ProviderHome extends Component {
         this.getProviderInfo();
     }
 
-   
+
 
 
     render() {
