@@ -23,7 +23,11 @@ class ProviderClients extends Component {
                 clients: res.data,
                 isLoading: false,
             }),
-        ).catch(err => console.log(err));
+        ).catch(err => 
+            this.setState({
+            //clients: res.data,
+            isLoading: false,
+        }),);
 
         console.log(this.props.user);
         console.log(this.state.clients);
