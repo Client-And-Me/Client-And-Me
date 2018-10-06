@@ -22,8 +22,11 @@ module.exports = {
             .findAll({
                 where: {
                     firebase_id: req.params.id,
-                    //[start.gte]: req.params.dte
-                }
+                    start: { $gte: req.params.dte }
+                },
+                order: [
+                    ["start", "ASC"],
+                ],
             })
             .then(dbModel => res.json(dbModel))
             .catch(err => res.status(422).json(err));
