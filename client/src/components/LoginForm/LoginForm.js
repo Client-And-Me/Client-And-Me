@@ -56,12 +56,16 @@ class LoginForm extends Component {
 
         API.getIsClient(auth.currentUser().uid)
             .then(response => {
-                if (response.data)
+                if (response.data) {
                     history.push(routes.CLIENTHOME);
+                    window.location.reload();
+                }
+
                 else {
                     API.getIsProvider(auth.currentUser().uid)
                         .then(response => {
                             history.push(routes.PROVIDERHOME);
+                            window.location.reload();
                         })
                         .catch(error => {
 
