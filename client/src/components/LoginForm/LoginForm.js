@@ -115,7 +115,6 @@ class LoginForm extends Component {
                                 <div className="input-field col s12">
                                     <button className="btn waves-effect waves-light col s12 loginButton" disabled={isInvalid} type="submit">Login</button>
                                 </div>
-                            </div>
                             <div className="row margin">
                                 <div className="input-field col s6 m6 l6">
                                     <p className="margin medium-small"><a href="/register" className="registerLink">Register</a></p>
