@@ -25,10 +25,6 @@ export default () => (
                                 <td>Likes The Mom Cut</td>
                                 <td>10/8/2018 2:38 PM</td>
                             </tr>
-                            <tr>
-                                <td>Kind of a pain in the ass</td>
-                                <td>10/8/2018 2:45 PM</td>
-                            </tr>
                         </tbody>
                     </Table>
                 </Row>

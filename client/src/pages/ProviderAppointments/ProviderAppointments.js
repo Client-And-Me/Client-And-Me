@@ -3,7 +3,7 @@ import AppointmentsTable from "../../components/AppointmentsTable";
 import moment from "moment"
 import API from "../../utils/API";
 // import { Link } from "react-router-dom";
-import { firebase } from '../../firebase';
+import { firebase } from "../../firebase";
 import "./ProviderAppointments.css";
 import { Card, Col, Row, Section, CardPanel, Input, Button, Table } from "react-materialize";
 
@@ -60,7 +60,7 @@ class ProviderAppointments extends Component {
                                 <CardPanel>
                                     <Row>
                                         <Input placeholder="Note" s={6} label="Note" />
-                                        <Button waves='light'>Submit</Button>
+                                        <Button waves="light">Submit</Button>
                                     </Row>
                                     <Row>
                                         <Table>
@@ -80,10 +80,6 @@ class ProviderAppointments extends Component {
                                                 <tr>
                                                     <td>Likes The Mom Cut</td>
                                                     <td>10/8/2018 2:38 PM</td>
-                                                </tr>
-                                                <tr>
-                                                    <td>Kind of a pain in the ass</td>
-                                                    <td>10/8/2018 2:45 PM</td>
                                                 </tr>
                                             </tbody>
                                         </Table>
